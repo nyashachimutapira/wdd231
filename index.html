@@ -1,60 +1,85 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Course Home Page">
+    <meta
+      name="description"
+      content="Basic structure or wireframe of my homepage">
     <meta name="author" content="Nyasha Chimutapira">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Course Home Page</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap"
+      rel="stylesheet">
+    <link rel="stylesheet" href="styles/styles.css">
     <link rel="stylesheet" href="styles/normalize.css">
-    <link rel="stylesheet" href="styles/small.css">
-    <link rel="stylesheet" href="styles/larger.css">
-    <script src="scripts/navigation.js" defer></script>
-    <script src="scripts/date.js" defer></script>
-    <script src="scripts/course.js" defer></script>
-    <script src="scripts/filter.js" defer></script>
-</head>
-<body>
+    <link rel="stylesheet" href="styles/scripts.js">
+  </head>
+  <body>
     <header>
-        <img src="images/.jpg" alt="Profile Photo">
-        <span>Nyasha Chimutapira</span>
-        <nav>
-            <button id="menu-toggle">☰ Menu</button>
-            <ul id="menu">
-                <li><a href="index.html" class="active">Home</a></li>
-                <li><a href="https://yourgithubusername.github.io/wdd231/chamber/" target="_blank">Chamber</a></li>
-                <li><a href="https://github.com/nyashachimutapira" target="_blank">GitHub Profile</a></li>
-                <li><a href="https://www.linkedin.com/in/yourlinkedinprofile/" target="_blank">LinkedIn</a></li>
-            </ul>
-        </nav>
-        
+      <img
+        src="images/image1.jpg"
+        alt="My Profile Picture"
+        loading="lazy"
+        width="50"
+        height="50">
+      <span>Nyasha Chimutapira</span>
+      <span class="hamburger" aria-label="Menu toggle"></span>
     </header>
+    <nav>
+      <ul>
+        <li>
+          <a
+            class="active"
+            href="#course-work"
+            title="Go to Course Work section"
+            >Home</a>
+        </li>
+        <li><a href="#" title="Go to Chamber Site">Chamber Site</a></li>
+        <li>
+          <a
+            href="https://github.com/nyashachimutapira"
+            target="_blank"
+            title="Visit my GitHub profile"
+            >GitHub Profile</a>
+        </li>
+        <li>
+          <a
+            href="https://www.linkedin.com/feed/"
+            target="_blank"
+            title="Visit my LinkedIn profile"
+            >LinkedIn</a>
+        </li>
+      </ul>
+    </nav>
     <main>
-        <h1>Home</h1>
-        <section id="introduction">
-            <h2>Introduction</h2>
-            <p>Welcome to the course home page. This course covers the fundamentals of web development including HTML, CSS, and JavaScript.</p>
+      <h1>Home</h1>
+      <div class="hero-container">
+        <section class="course-work" id="course-work">
+          <h2>Course Work</h2>
+          <ul>
+            <li></li>
+            <li></li>
+            <li></li>
+          </ul>
         </section>
-        <section id="content">
-            <h2>Content</h2>
-            <p>In this course, you will learn about various web development topics and complete assignments to practice your skills.</p>
+        <section class="country-city">
+          <h2>Masvingo, Zimbabwe</h2>
+          <img src="images/image2.jpg" alt="Great Zimbabwe, Masvingo" />
+          <p>Great Zimbabwe, Masvingo.</p>
         </section>
-        <section id="courses">
-            <h2>Courses</h2>
-            <div>
-                <button onclick="filterCourses('all')">All</button>
-                <button onclick="filterCourses('WDD')">WDD</button>
-                <button onclick="filterCourses('CSE')">CSE</button>
-            </div>
-            <div id="course-list">
-                <!-- Course cards will be dynamically inserted here -->
-            </div>
-            <p>Total Credits: <span id="total-credits"></span></p>
-        </section>
+      </div>
+      <section class="certifications">
+        <!-- dynamic content -->
+      </section>
     </main>
     <footer>
-        <p>&copy; <span id="currentyear"></span> Nyasha Chimutapira. Zimbabwe.</p>
-        <p id="lastModified"></p>
+      <p id="year"></p>
+      <p id="lastModified"></p>
     </footer>
-</body>
+    <script src="scripts/script.js" defer></script>
+  </body>
 </html>
