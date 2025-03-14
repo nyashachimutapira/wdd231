@@ -1,0 +1,100 @@
+[
+    {
+        "name": "Maria's Boutique",
+        "address": "123 Main St, Harare, Zimbabwe",
+        "phone": "555-1234",
+        "website": "https://mariasboutique.com",
+        "image": "images/marias-boutique.jpg",
+        "membership_level": 1,
+        "info": "A charming boutique offering unique clothing."
+    },
+    {
+        "name": "Diego's Tech Solutions",
+        "address": "456 Tech Ave, Bulawayo, Zimbabwe",
+        "phone": "555-5678",
+        "website": "https://diegotech.com",
+        "image": "images/diegotech.jpg",
+        "membership_level": 2,
+        "info": "Providing innovative tech solutions for businesses."
+    },
+    {
+        "name": "Timbuktu Bakery",
+        "address": "789 Sweet St, Gweru, Zimbabwe",
+        "phone": "555-8765",
+        "website": "https://timbuktubakery.com",
+        "image": "images/timbuktubakery.jpg",
+        "membership_level": 3,
+        "info": "Freshly baked goods made daily."
+    },
+    {
+        "name": "Green Thumb Gardening",
+        "address": "321 Garden Rd, Mutare, Zimbabwe",
+        "phone": "555-4321",
+        "website": "https://greenthumb.com",
+        "image": "images/greenthumb.jpg",
+        "membership_level": 1,
+        "info": "Your local gardening experts."
+    },
+    {
+        "name": "Fitness Center Timbuktu",
+        "address": "654 Fit St, Masvingo, Zimbabwe",
+        "phone": "555-7890",
+        "website": "https://fitnesscentertimbuktu.com",
+        "image": "images/fitnesscenter.jpg",
+        "membership_level": 2,
+        "info": "Join us for a healthier lifestyle."
+    },
+    {
+        "name": "Timbuktu Coffee Shop",
+        "address": "159 Brew St, Kwekwe, Zimbabwe",
+        "phone": "555-2468",
+        "website": "https://timbuktucoffee.com",
+        "image": "images/timbuktucoffee.jpg",
+        "membership_level": 3,
+        "info": "The best coffee in town."
+    },
+    {
+        "name": "Artisan Crafts Co.",
+        "address": "753 Craft St, Zvishavane, Zimbabwe",
+        "phone": "555-3698",
+        "website": "https://artisancrafts.com",
+        "image": "images/artisancrafts.jpg",
+        "membership_level": 1,
+        "info": "Handcrafted items from local artisans."
+    },
+    {
+        "name": "Chitungwiza Crafts Co.",
+        "address": "12 Harare Rd, Chitungwiza, Zimbabwe",
+        "phone": "555-4567",
+        "website": "https://chitungwiza-crafts.com", 
+        "image": "images/chitungwiza-crafts.jpg",
+        "membership_level": 1,
+        "info": "Beautiful crafts made by local artisans.",
+        "family_name": "Santos",
+        "move_in_date": "2024-06-24",
+        "number_of_people": 4,
+        "visited_by_bishopric": true,
+        "family_members": [
+            {
+                "name": "Pedro Santos",
+                "gender": "Male",
+                "birthdate": "1990-05-15"
+            },
+            {
+                "name": "Maria Santos",
+                "gender": "Female",
+                "birthdate": "1992-08-20"
+            },
+            {
+                "name": "Andrea Santos",
+                "gender": "Female",
+                "birthdate": "2010-03-05"
+            },
+            {
+                "name": "Luz Santos",
+                "gender": "Male",
+                "birthdate": "2012-11-10"
+            }
+        ]
+    }
+]

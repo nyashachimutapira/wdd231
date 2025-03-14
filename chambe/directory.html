@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Chamber of Commerce Directory">
+    <meta name="author" content="Nyasha Chimutapira">
+    <title>Chamber Directory</title>
+    <link rel="icon" href="images/iconfavicon.ico" type="image/x-icon">
+    <meta property="og:title" content="Chamber Directory">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="images/directory-image.jpg">
+    <meta property="og:url" content="http://yourwebsite.com/directory.html">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header>
+        <h1>Chamber Directory</h1>
+        <nav>
+            <ul>
+                <li><a href="directory.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <button id="toggleView">Toggle View</button>
+        <div id="membersList" class="grid-view"></div>
+    </main>
+
+    <footer>
+        <p>&copy; <span id="currentYear"></span> Nyasha Chimutapira</p>
+        <p>2025: <span id="lastModified"></span></p>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
