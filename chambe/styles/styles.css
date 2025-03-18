@@ -1,0 +1,156 @@
+/* General Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f8f8f8;
+}
+
+/* Header Styles */
+header {
+    background: #4CAF50; /* Dark Green */
+    color: white;
+    padding: 1.5em 0;
+    text-align: center;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 20px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
+}
+
+/* Hero Section */
+.hero {
+    position: relative;
+    text-align: center;
+}
+
+.hero-image {
+    width: 100%;
+    height: auto;
+    max-height: 400px;
+    object-fit: cover;
+}
+
+.cta-button {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #f39c12; /* Orange */
+    color: white;
+    padding: 12px 24px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1.2em;
+}
+
+.cta-button:hover {
+    background: #e67e22; /* Darker Orange */
+}
+
+/* Main Content */
+main {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Section Styles */
+section {
+    margin-bottom: 30px;
+}
+
+h2 {
+    color: #4CAF50; /* Dark Green */
+    border-bottom: 2px solid #4CAF50;
+    padding-bottom: 5px;
+}
+
+/* Weather Section */
+.weather {
+    background: #e3f2fd; /* Light Blue */
+    padding: 15px;
+    border-radius: 5px;
+}
+
+.weather p {
+    margin: 5px 0;
+}
+
+/* Spotlights Section */
+.spotlights {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.spotlight {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 15px;
+    margin: 10px;
+    flex: 1 1 calc(32% - 20px); /* Responsive cards */
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.spotlight img {
+    width: 100px; /* Fixed logo size */
+    height: auto;
+    margin-bottom: 10px;
+}
+
+.spotlight h4 {
+    margin: 10px 0 5px;
+    font-size: 1.2em;
+    color: #4CAF50; /* Dark Green */
+}
+
+.spotlight p {
+    margin: 5px 0;
+}
+
+/* Footer Styles */
+footer {
+    text-align: center;
+    padding: 15px;
+    background: #4CAF50;
+    color: white;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Responsive Styles */
+@media (max-width: 600px) {
+    nav ul li {
+        display: block;
+        margin: 5px 0;
+    }
+    
+    .spotlight {
+        flex: 1 1 100%; /* Stack cards on small screens */
+    }
+}
