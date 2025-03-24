@@ -1,153 +1,135 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-US">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Home page of Chamber Of Commerce">
-    <meta name="author" content="Nyasha Chimutapira">
-    <meta property="og:title" content="Chamber Home Page">
-    <meta property="og:type" content="website">
-    <meta property="og:image" content="https://nyashachimutapira.github.io/wdd231/chamber/images/icon.png">
-    <meta property="og:url" content="https://nyashachimutapira.github.io/wdd231/chamber/index.html">
-
-    <title>Chamber Home Page</title>
-    <link rel="stylesheet" href="styles/normalize.css">
-    <link rel="stylesheet" href="styles/directory.css">
-    <link rel="stylesheet" href="styles/director.css">
-    <link rel="icon" href="images/icon.png">
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Chamber Home Page">
+  <meta name="author" content="Nyasha Chimutapira">
+  <title>Gweru Chamber of Commerce Home Page</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nova+Cut&family=Sunflower:wght@300&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles/normalize.css">
+  <link rel="stylesheet" href="styles/index.css">
+  <link rel="icon" href="favicon.ico">
+  <meta property="og:title" content="Chamber Directory Page">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://nyashachimutapira.github.io/wdd231/images/chamber_logo.webp">
+  <meta property="og:url" content="https://nyashachimutapira.github.io/wdd231/chamber/directory">
+  <script src="scripts/date.js" defer></script>
+  <script src="scripts/navigation.js" defer></script>
+  <script src="scripts/showcase.js" defer></script>
+  <script src="scripts/weather.js" defer></script>
+  <script src="scripts/forecast.js" defer></script>
+  <style>
+      .chamber-title {
+          font-family: 'Sunflower', sans-serif; /* Change to desired font */
+          font-size: 2em; /* Adjust size as needed */
+          color: #faf1f1; /* Change color if desired */
+      }
+  </style>
 </head>
 <body>
-    <header>
-        <div class="head-container">
-            <img src="images/icons-favicon.png" alt="site logo">
-            <span>Chamber Of Commerce</span>
+  <header>
+    <div class="header-content">
+      <img src="images/chamber.jpg" alt="Idaho Chamber Logo">
+      <span class="chamber-title">
+        Gweru <br>
+        Chamber of Commerce
+      </span>
+    </div>
+    <a id="menu" href="#"></a>
+    <nav aria-label="Main Navigation">
+      <ul class="navigation">
+        <li><a href="index.html" title="Home">Home</a></li>
+        <li><a href="directory.html" title="Directory">Directory</a></li>
+        <li><a href="#" title="Join">Join</a></li>
+        <li><a href="#" target="_blank" title="Discover">Discover</a></li>
+      </ul>
+    </nav> 
+  </header>
+
+  <main>
+    <h1>Home</h1>
+    <img id="hero-img" src="images/hero-image.jpg" alt="Gweru, Idaho Neighborhood">
+    <div class="cta-join-button">
+      <button>Join Chamber of Commerce</button>
+    </div>
+    <div id="general-info">
+      <section class="current-events">
+        <h2 id="current-events-header">Events</h2>
+        <div class="events-table">
+          <div class="event-row header">
+            <div class="event-name">Event</div>
+            <div class="event-date">Date/Time</div>
+            <div class="event-location">Location</div>
+          </div>
+          <div class="event-row">
+            <div class="event-name">Gweru Main Street Market</div>
+            <div class="event-date">Saturdays, Apr–Oct, 9:00 AM – 2:00 PM</div>
+            <div class="event-location">123 Main Street, Gweru, Zimbabwe</div>
+          </div>
+          <div class="event-row">
+            <div class="event-name">Sparklight Movie Night</div>
+            <div class="event-date">Fridays, Jun–Aug, around sunset</div>
+            <div class="event-location">456 Second Street, Bulawayo, Zimbabwe</div>
+          </div>
+          <div class="event-row">
+            <div class="event-name">Concerts on Broadway</div>
+            <div class="event-date">Annually in September, evenings</div>
+            <div class="event-location">789 Third Avenue, Gweru, Zimbabwe</div>
+          </div>
+          <div class="event-row">
+            <div class="event-name">Christmas in Meridian</div>
+            <div class="event-date">Late Nov–Dec, varies</div>
+            <div class="event-location">101 Fourth Street, Mutare, Zimbabwe</div>
+          </div>
         </div>
-        <nav id="nav-menu">
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="directory.html">Directory</a></li>
-                <li><a href="join.html">Join</a></li>
-                <li><a href="discover.html">Discover</a></li>
-            </ul>
-        </nav>
-        <button class="hamburger" id="hamburger">
-            <span> ☰</span>
-        </button>
-    </header>
-
-    <main>
-        <section class="hero">
-            <img src="images/hero-image.jpg" alt="Hero Image" class="hero-image">
-            <div class="hero-text">
-                <h1>Welcome to the Chamber Of Commerce</h1>
-                <p>Your gateway to business networking and opportunities.</p>
-                <a href="join.html" class="cta-button">Join Us Today!</a>
-            </div>
-        </section>
-
-        <section class="current-events">
-            <h2>Current Events</h2>
-            <ul>
-                <li>Annual Business Expo - March 25, 2025</li>
-                <li>Networking Night - April 1, 2025</li>
-                <li>Monthly Chamber Meeting - April 15, 2025</li>
-            </ul>
-        </section>
-
-        <section class="weather" id="weather-container">
-            <h2>Current Weather</h2>
-            <div id="weather-data">
-                <p>Loading weather data...</p>
-            </div>
-        </section>
-
-        <section class="company-spotlights">
-            <h2>Company Spotlights</h2>
-            <div id="spotlight-container">
-                <div class="spotlight-card">
-                    <img src="images/diegotech.jpg" alt="Diego's Tech Solutions logo" class="spotlight-logo">
-                    <h3>Diego's Tech Solutions</h3>
-                    <p>Address: 456 Tech Ave, Bulawayo, Zimbabwe</p>
-                    <p>Phone: 555-5678</p>
-                    <p>Website: <a href="https://diegotech.com" target="_blank">diegotech.com</a></p>
-                    <p>Membership Level: Silver</p>
-                    <p>Info: Providing innovative tech solutions for businesses.</p>
-                </div>
-                <div class="spotlight-card">
-                    <img src="images/marias-boutique.jpg" alt="Maria's Boutique logo" class="spotlight-logo">
-                    <h3>Maria's Boutique</h3>
-                    <p>Address: 123 Main St, Harare, Zimbabwe</p>
-                    <p>Phone: 555-1234</p>
-                    <p>Website: <a href="https://mariasboutique.com" target="_blank">mariasboutique.com</a></p>
-                    <p>Membership Level: Gold</p>
-                    <p>Info: A charming boutique offering unique clothing.</p>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <footer>
-        <div class="footer-nav">
-            <a href="index.html">Home</a>
-            <a href="directory.html">Directory</a>
-            <a href="join.html">Join</a>
-            <a href="discover.html">Discover</a>
-            <div class="footer-social-media">
-                <a href="https://www.facebook.com" target="_blank"><img src="images/facebook.svg" alt="f" width="32" height="32"></a>
-                <a href="https://www.x.com" target="_blank"><img src="images/x.svg" alt="x" width="32" height="32"></a>
-                <a href="https://www.instagram.com" target="_blank"><img src="images/instagram.svg" alt="i" width="32" height="32"></a>
-                <a href="https://www.linkedin.com" target="_blank"><img src="images/linkedin.svg" alt="l" width="32" height="32"></a>
-                <a href="https://www.youtube.com" target="_blank"><img src="images/youtube.svg" alt="y" width="32" height="32"></a>
-                <a href="https://t.me" target="_blank"><img src="images/telegram.jpg" alt="telegram" width="32" height="32"></a>
-            </div>
-        </div>
-        <div class="footer-info">
-            <p>Chamber Of Commerce</p>
-            <p>P.O. Box 123 Gweru, Zimbabwe</p>
-            <p>123 Main Street, Gweru</p>
-            <p>Email: chimutapiran@gmail.com</p>
-            <p>Phone: +26377 386 7878</p>
-        </div>
-        
-        <div class="footer-last-modified">
-            <p id="lastModified"></p>
-        </div>
+      </section>      
+      <div class="weather-card" aria-live="polite">
+        <h2 id="current-weather-header">Current Weather</h2>
+        <h2 id="town">Weather in Meridian</h2>
+        <img id="graphic" src="images/default-weather.png" alt="Loading weather graphic">
+        <p id="description">Loading weather...</p>
+        <p id="temperature">--°F</p>
+      </div>
+      <div class="weather-forecast">
+        <h2 id="weather-forecast-header">Weather Forecast</h2>
+        <p id="today">--°F</p>
+        <p id="tomorrow">--°F</p>
+        <p id="day-after">--°F</p>
+      </div>      
+    </div>
+    <!-- <h2 class="company-spotlight">Company Spotlight</h2> -->
+    <div id="members">
+    </div>
+  </main>
   
-        <div class="copyright">
-            <p id="year"></p>
-            <!-- dynamically generated -->
-        </div>
-    </footer>
-
-    <script src="scripts/scripts.js"></script>
-    <script>
-        // Weather API call
-        const apiKey = 'YOUR_OPENWEATHERMAP_API_KEY'; // Replace with your API key
-        const city = 'Gweru,Zimbabwe'; // Change to your chamber location
-        const weatherContainer = document.getElementById('weather-data');
-
-        async function fetchWeather() {
-            try {
-                const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`);
-                const data = await response.json();
-                const temperature = Math.round(data.main.temp);
-                const description = data.weather.map(item => item.description.charAt(0).toUpperCase() + item.description.slice(1)).join(', ');
-
-                weatherContainer.innerHTML = `
-                    <p>Current Temperature: ${temperature}°C</p>
-                    <p>Weather: ${description}</p>
-                `;
-            } catch (error) {
-                weatherContainer.innerHTML = '<p>Error fetching weather data.</p>';
-            }
-        }
-
-        // Initialize
-        fetchWeather();
-    </script>
+  <footer>
+    <div class="coc-contact">
+      <p class="mcoc-bold">Gweru Chamber of Commerce</p>
+      <p>123 Main Street, Gweru, Zimbabwe</p>
+      <p>+263 77 386 7878</p>
+      <p>chimutapiran@gmail.com</p>
+    </div>
+    <div class="socials">
+      <a href="https://twitter.com/" target="_blank">
+        <img src="images/xlogo.png" alt="Idaho Chamber X Logo Link">
+      </a>
+      <a href="https://www.facebook.com/" target="_blank">
+        <img src="images/facebook.svg" alt="Idaho Chamber Facebook Logo Link">
+      </a>
+      <a href="https://www.linkedin.com/" target="_blank">
+        <img src="images/linkedin.svg" alt="Idaho Chamber LinkedIn Logo Link">
+      </a>
+      <a href="https://telegram.org/" target="_blank">
+        <img src="images/telegram.jpg" alt="Idaho Chamber Telegram Logo Link">
+      </a>
+    </div>
+    <div class="bq-copyright">
+      <p>&copy; <span id="currentyear"></span> Nyasha Chimutapira, WDD 231</p>
+      <p id="lastModified"></p>
+    </div>
+  </footer>  
 </body>
 </html>
