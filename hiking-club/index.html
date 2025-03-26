@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Welcome to the Local Hiking Club">
+    <title>Home - Bishop Wilderness Explorers</title>
+    <style>
+        body {
+            font-family: 'Sunflower', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url('images/hiking.jpg'); 
+            background-size: cover; /* Cover the entire background */
+            background-position: center; /* Center the background */
+            color: #f4f4f4; /* Light text color */
+        }
+
+        header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 1rem 2rem;
+            background-color: rgba(0, 0, 0, 0.7); /* Dark transparent header */
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+        }
+
+        .logo img {
+            max-width: 150px; /* Logo size */
+            height: auto; /* Maintain aspect ratio */
+        }
+
+        nav {
+            display: flex;
+            gap: 20px; /* Space between nav links */
+        }
+
+        nav a {
+            color: #f4f4f4; /* Light text color */
+            text-decoration: none;
+            padding: 10px 15px;
+            border-radius: 5px; /* Rounded corners */
+            transition: background-color 0.3s ease; /* Smooth transition */
+        }
+
+        nav a:hover {
+            background-color: #ffcc00; /* Bright highlight on hover */
+            color: #333; /* Dark text on hover */
+        }
+
+        .hero {
+            height: 300px; /* Fixed height for hero section */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 1rem;
+            background-color: rgba(0, 0, 0, 0.5); /* Dark overlay for text contrast */
+        }
+
+        .hero h1 {
+            font-size: 2.5rem; /* Large heading */
+            margin: 0; /* No margin */
+        }
+
+        .hero p {
+            font-size: 1.2rem; /* Subheading */
+        }
+
+        main {
+            padding: 3rem 2rem;
+            text-align: center; /* Center align text in main */
+            background-color: rgba(42, 42, 42, 0.8); /* Darker background for main content */
+            border-radius: 8px; /* Rounded corners */
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Shadow for depth */
+            margin: 2rem auto; /* Center the main section */
+            max-width: 800px; /* Max width for main */
+        }
+
+        .features, .events, .testimonials {
+            padding: 2rem 0;
+            background-color: rgba(59, 59, 59, 0.9); /* Slightly lighter transparent background for sections */
+            border-radius: 8px; /* Rounded corners */
+            margin: 2rem 0; /* Margin between sections */
+        }
+
+        .features h2, .events h2, .testimonials h2 {
+            margin-bottom: 1rem; /* Space below the heading */
+            color: #ffcc00; /* Bright color for section headings */
+        }
+
+        .feature-list, .event-list {
+            display: flex;
+            justify-content: space-around; /* Space between items */
+            flex-wrap: wrap; /* Wrap items to next line */
+        }
+
+        .feature, .event {
+            background-color: #4a4a4a; /* Dark background for feature/event cards */
+            border-radius: 8px; /* Rounded corners */
+            padding: 1rem;
+            margin: 1rem; /* Space between cards */
+            flex: 1 1 200px; /* Flexbox properties for responsive design */
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); /* Shadow for depth */
+        }
+
+        button {
+            background-color: #ffcc00; /* Bright button color */
+            color: #333; /* Dark button text */
+            border: none; /* Remove border */
+            padding: 0.75rem 1.5rem; /* Padding for button */
+            border-radius: 5px; /* Rounded corners */
+            cursor: pointer; /* Pointer cursor on hover */
+            font-size: 1rem; /* Button text size */
+            transition: background-color 0.3s ease; /* Smooth background transition */
+        }
+
+        button:hover {
+            background-color: #e6b800; /* Darker yellow on hover */
+        }
+
+        footer {
+            display: flex;
+            justify-content: space-between; /* Space between address and social links */
+            align-items: center; /* Center align items vertically */
+            background-color: rgba(0, 0, 0, 0.7); /* Dark transparent footer */
+            color: #f4f4f4;
+            padding: 1rem 2rem; /* Padding for footer */
+        }
+
+        .footer-left {
+            text-align: left; /* Align text to the left */
+        }
+
+        .footer-center {
+            text-align: center; /* Center text for copyright */
+            flex-grow: 1; /* Allow center to take available space */
+        }
+
+        .socials img {
+            max-width: 30px; /* Social icon size */
+            margin: 0 5px; /* Space between icons */
+        }
+
+        .socials {
+            display: flex; /* Flexbox for social icons */
+            justify-content: flex-end; /* Align social icons to the right */
+        }
+
+        /* Responsive styles */
+        @media (max-width: 600px) {
+            nav {
+                flex-direction: column; /* Stack nav links on small screens */
+                align-items: flex-start;
+            }
+
+            .feature-list, .event-list {
+                flex-direction: column; /* Stack features/events on small screens */
+                align-items: center;
+            }
+
+            footer {
+                flex-direction: column; /* Stack footer items on small screens */
+                align-items: flex-start; /* Align items to the left */
+            }
+        }
+    </style>
+    <link rel="icon" href="images/favicon.jpg" type="image/x-icon">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="images/hiking logo.jpg" alt="Bishop Wilderness Explorers Logo" id="company-logo">
+        </div>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="trails.html">Trails</a>
+            <a href="events.html">Events</a>
+            <a href="membership.html">Membership</a>
+            <a href="safety-tips.html">Safety Tips</a>
+            <a href="contact.html">Contact</a>
+            <a href="about.html">About Us</a>
+        </nav>
+    </header>
+    
+    <div class="hero">
+        <h1>Discover Your Next Adventure</h1>
+        <p>Join us for unforgettable hiking experiences!</p>
+    </div>
+    
+    <main>
+        <h1>Welcome to Bishop Wilderness Explorers</h1>
+        <p>Join us for exciting hikes and explore beautiful trails in our area!</p>
+        <button id="load-data">Load Popular Trails</button>
+        <section id="trail-section"></section>
+
+        <div class="features">
+            <h2>Our Features</h2>
+            <div class="feature-list">
+                <div class="feature">
+                    <h3>Guided Tours</h3>
+                    <p>Join expert guides for exciting hikes.</p>
+                </div>
+                <div class="feature">
+                    <h3>Trail Information</h3>
+                    <p>Find detailed information about local trails.</p>
+                </div>
+                <div class="feature">
+                    <h3>Community Events</h3>
+                    <p>Connect with fellow hiking enthusiasts through events.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="events">
+            <h2>Upcoming Events</h2>
+            <div class="event-list">
+                <div class="event">
+                    <h3>Full Moon Hike</h3>
+                    <p>Date: March 30, 2025</p>
+                    <p>Location: Chimanimani Mountains</p>
+                    <p>Description: Experience breathtaking views under the full moon.</p>
+                </div>
+                <div class="event">
+                    <h3>Family Hiking Day</h3>
+                    <p>Date: April 15, 2025</p>
+                    <p>Location: Hwange National Park</p>
+                    <p>Description: Fun day of hiking and activities for all ages!</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="testimonials">
+            <h2>What Our Members Say</h2>
+            <p>"The best hiking experiences!"</p>
+            <p>"Amazing community and friendly guides."</p>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-left">
+            <p class="mcoc-bold">Bishop Wilderness Explorers</p>
+            <p>123 Main Street, Gweru, Zimbabwe</p>
+            <p>+263 77 386 7878</p>
+            <p>chimutapiran@gmail.com</p>
+        </div>
+        <div class="footer-center">
+            <div class="bq-copyright">
+                <p>&copy; <span id="currentyear"></span> Bishop Wilderness Explorers</p>
+                <p id="lastModified"></p>
+            </div>
+        </div>
+        <div class="socials">
+            <a href="https://twitter.com/" target="_blank">
+                <img src="images/xlogo.png" alt="Twitter Logo">
+            </a>
+            <a href="https://www.facebook.com/" target="_blank">
+                <img src="images/facebook.svg" alt="Facebook Logo">
+            </a>
+            <a href="https://www.linkedin.com/" target="_blank">
+                <img src="images/linkedin.svg" alt="LinkedIn Logo">
+            </a>
+            <a href="https://telegram.org/" target="_blank">
+                <img src="images/telegram.jpg" alt="Telegram Logo">
+            </a>
+        </div>
+    </footer>
+    <script type="module">
+        document.getElementById('currentyear').textContent = new Date().getFullYear();
+        document.getElementById('lastModified').textContent = 'Last modified: ' + document.lastModified;
+    </script>
+</body>
+</html>

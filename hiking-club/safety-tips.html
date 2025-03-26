@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Hiking Safety Tips">
+    <title>Safety Tips - Bishop Wilderness Explorers</title>
+    <style>
+        body {
+            font-family: 'Sunflower', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url('images/hiking8.jpg'); /* Replace with your background image */
+            background-size: cover; /* Cover the entire background */
+            background-position: center; /* Center the background */
+            color: #f4f4f4; /* Light text color */
+        }
+
+        header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 1rem 2rem;
+            background-color: rgba(59, 59, 59, 0.8); /* Darker transparent background for header */
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+        }
+
+        nav {
+            display: flex;
+            gap: 15px; /* Space between nav links */
+        }
+
+        nav a {
+            color: #f4f4f4; /* Light text color */
+            text-decoration: none;
+            padding: 10px;
+            transition: background-color 0.3s ease; /* Smooth transition */
+        }
+
+        nav a:hover {
+            background-color: #ffcc00; /* Bright highlight on hover */
+            color: #333; /* Dark text on hover */
+        }
+
+        main {
+            padding: 2rem;
+            max-width: 800px; /* Max width for main content */
+            margin: 2rem auto; /* Center the main section */
+            background-color: rgba(42, 42, 42, 0.8); /* Darker background for main content */
+            border-radius: 8px; /* Rounded corners */
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Shadow for depth */
+        }
+
+        h1 {
+            margin-bottom: 1rem; /* Space below the heading */
+            text-align: center; /* Center align heading */
+            color: #ffcc00; /* Bright color for heading */
+        }
+
+        p {
+            text-align: center; /* Center align paragraph text */
+        }
+
+        ul {
+            list-style-type: disc; /* Bullet points for list */
+            padding-left: 20px; /* Indentation for list */
+        }
+
+        footer {
+            display: flex;
+            justify-content: space-between; /* Space between address and social links */
+            align-items: center; /* Center align items vertically */
+            background-color: rgba(59, 59, 59, 0.8); /* Darker transparent background for footer */
+            color: #f4f4f4;
+            padding: 1rem 2rem; /* Padding for footer */
+        }
+
+        .footer-left {
+            text-align: left; /* Align text to the left */
+        }
+
+        .footer-center {
+            text-align: center; /* Center text for copyright */
+            flex-grow: 1; /* Allow center to take available space */
+        }
+
+        .socials img {
+            max-width: 30px; /* Social icon size */
+            margin: 0 5px; /* Space between icons */
+        }
+
+        .socials {
+            display: flex; /* Flexbox for social icons */
+            justify-content: flex-end; /* Align social icons to the right */
+        }
+
+        /* Responsive styles */
+        @media (max-width: 600px) {
+            nav {
+                flex-direction: column; /* Stack nav links on small screens */
+                align-items: flex-start;
+            }
+
+            footer {
+                flex-direction: column; /* Stack footer items on small screens */
+                align-items: flex-start; /* Align items to the left */
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="trails.html">Trails</a>
+            <a href="events.html">Events</a>
+            <a href="membership.html">Membership</a>
+            <a href="safety-tips.html">Safety Tips</a>
+            <a href="contact.html">Contact</a>
+            <a href="about.html">About</a>
+        </nav>
+    </header>
+    <main>
+        <h1>Hiking Safety Tips</h1>
+        <p>Stay safe on your hikes! Here are some essential tips:</p>
+        <ul>
+            <li>Always tell someone your hiking route.</li>
+            <li>Carry enough water and snacks to stay hydrated and energized.</li>
+            <li>Wear appropriate footwear to prevent injuries.</li>
+            <li>Check the weather before heading out to avoid storms.</li>
+            <li>Stay on marked trails to minimize the risk of getting lost.</li>
+            <li>Pack a first aid kit for minor injuries.</li>
+            <li>Know your limits and choose trails that match your fitness level.</li>
+            <li>Keep your phone charged for emergencies and consider carrying a power bank.</li>
+            <li>Respect wildlife and keep a safe distance.</li>
+            <li>Learn basic navigation skills, including how to use a map and compass.</li>
+        </ul>
+        
+        <h2>Essential Gear for Hiking</h2>
+        <p>Make sure to pack the following items for a safe hiking experience:</p>
+        <ul>
+            <li>Water bottle or hydration system</li>
+            <li>High-energy snacks (e.g., nuts, energy bars)</li>
+            <li>First aid kit</li>
+            <li>Map and compass or GPS device</li>
+            <li>Multi-tool or knife</li>
+            <li>Sun protection (sunscreen, sunglasses, hat)</li>
+            <li>Emergency whistle</li>
+            <li>Headlamp or flashlight with extra batteries</li>
+        </ul>
+
+        <h2>Additional Resources</h2>
+        <p>For more detailed information, check out these resources:</p>
+        <ul>
+            <li><a href="https://www.nps.gov/subjects/safety/index.htm" target="_blank" style="color: #ffcc00;">National Park Service Safety Guidelines</a></li>
+            <li><a href="https://www.rei.com/learn/expert-advice/hiking.html" target="_blank" style="color: #ffcc00;">REI Hiking Tips and Tricks</a></li>
+        </ul>
+    </main>
+    <footer>
+        <div class="footer-left">
+            <p class="mcoc-bold">Bishop Wilderness Explorers</p>
+            <p>123 Main Street, Gweru, Zimbabwe</p>
+            <p>+263 77 386 7878</p>
+            <p>chimutapiran@gmail.com</p>
+        </div>
+        <div class="footer-center">
+            <div class="bq-copyright">
+                <p>&copy; <span id="currentyear"></span> Nyasha Chimutapira, WDD 231</p>
+                <p id="lastModified"></p>
+            </div>
+        </div>
+        <div class="socials">
+            <a href="https://twitter.com/" target="_blank">
+                <img src="images/xlogo.png" alt="Twitter Logo">
+            </a>
+            <a href="https://www.facebook.com/" target="_blank">
+                <img src="images/facebook.svg" alt="Facebook Logo">
+            </a>
+            <a href="https://www.linkedin.com/" target="_blank">
+                <img src="images/linkedin.svg" alt="LinkedIn Logo">
+            </a>
+            <a href="https://telegram.org/" target="_blank">
+                <img src="images/telegram.jpg" alt="Telegram Logo">
+            </a>
+        </div>
+    </footer>
+    <script type="module">
+        document.getElementById('currentyear').textContent = new Date().getFullYear();
+        document.getElementById('lastModified').textContent = 'Last modified: ' + document.lastModified;
+    </script>
+</body>
+</html>

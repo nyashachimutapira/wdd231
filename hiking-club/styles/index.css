@@ -1,0 +1,79 @@
+body {
+    font-family: 'Sunflower', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4; /* Light background color */
+    color: #333; /* Dark text color */
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem;
+    background-color: #4CAF50; /* Green header */
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+#company-logo {
+    max-width: 150px; /* Logo size */
+    height: auto; /* Maintain aspect ratio */
+}
+
+nav {
+    display: flex;
+    gap: 15px; /* Space between nav links */
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+}
+
+nav a:hover {
+    background-color: #fff; /* Hover effect */
+    color: #4CAF50; /* Text color on hover */
+    transition: all 0.3s ease; /* Smooth transition */
+}
+
+main {
+    padding: 2rem;
+}
+
+footer {
+    background-color: #4CAF50; /* Green footer */
+    color: white;
+    text-align: center;
+    padding: 1rem;
+}
+
+.socials {
+    margin: 1rem 0;
+}
+
+.socials img {
+    max-width: 30px; /* Social icon size */
+    margin: 0 5px; /* Space between icons */
+}
+
+.coc-contact {
+    margin-bottom: 1rem;
+}
+
+.bq-copyright {
+    font-size: 0.8rem; /* Smaller text for copyright */
+}
+
+/* Responsive styles */
+@media (max-width: 600px) {
+    nav {
+        flex-direction: column; /* Stack nav links on small screens */
+        align-items: flex-start;
+    }
+}

@@ -1,0 +1,8 @@
+{
+    "trails": [
+        { "title": "Sunny Ridge Trail", "description": "A beautiful trail with stunning views." },
+        { "title": "Mountain Peak Trail", "description": "A challenging hike to the peak." },
+        { "title": "Forest Walk", "description": "A serene walk through the forest." },
+        { "title": "Lake View Trail", "description": "A scenic trail around the lake." }
+    ]
+}

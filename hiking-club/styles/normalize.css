@@ -1,0 +1,44 @@
+/* normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
+
+/* 1. Browser default styles */
+html {
+    line-height: 1.15; /* 1 */
+    -webkit-text-size-adjust: 100%; /* 2 */
+}
+
+body {
+    margin: 0;
+}
+
+/* 2. Remove default padding */
+h1 {
+    font-size: 2em; /* 1 */
+    margin: 0.67em 0; /* 2 */
+}
+
+/* 3. Improve readability of non-header text */
+h1, h2, h3, h4, h5, h6 {
+    font-weight: normal; /* 1 */
+}
+
+/* 4. Remove margin on fieldsets */
+fieldset {
+    margin: 0; /* 1 */
+}
+
+/* 5. Remove default list styles */
+ul, ol {
+    padding: 0; /* 1 */
+    list-style: none; /* 2 */
+}
+
+/* 6. Remove default table styles */
+table {
+    border-collapse: collapse; /* 1 */
+    border-spacing: 0; /* 2 */
+}
+
+/* 7. Add default box-sizing */
+*, *::before, *::after {
+    box-sizing: border-box; /* 1 */
+}

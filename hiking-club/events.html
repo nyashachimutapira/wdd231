@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Upcoming Events">
+    <title>Events - Bishop Wilderness Explorers</title>
+    <style>
+        body {
+            font-family: 'Sunflower', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url('images/hiking3.jpg'); /* Replace with your background image */
+            background-size: cover; /* Cover the entire background */
+            background-position: center; /* Center the background */
+            color: #f4f4f4; /* Light text color */
+        }
+
+        header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 1rem 2rem;
+            background-color: rgba(59, 59, 59, 0.8); /* Darker transparent background for header */
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+        }
+
+        nav {
+            display: flex;
+            gap: 15px; /* Space between nav links */
+        }
+
+        nav a {
+            color: #f4f4f4; /* Light text color */
+            text-decoration: none;
+            padding: 10px;
+            transition: background-color 0.3s ease; /* Smooth transition */
+        }
+
+        nav a:hover {
+            background-color: #ffcc00; /* Bright highlight on hover */
+            color: #333; /* Dark text on hover */
+        }
+
+        main {
+            padding: 2rem;
+            max-width: 800px; /* Max width for main content */
+            margin: 2rem auto; /* Center the main section */
+            background-color: rgba(42, 42, 42, 0.8); /* Darker background for main content */
+            border-radius: 8px; /* Rounded corners */
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Shadow for depth */
+        }
+
+        h1 {
+            margin-bottom: 1rem; /* Space below the heading */
+            text-align: center; /* Center align heading */
+            color: #ffcc00; /* Bright color for heading */
+        }
+
+        .event-list {
+            margin-top: 1rem;
+        }
+
+        .event {
+            background-color: #4a4a4a; /* Dark background for event cards */
+            border-radius: 8px; /* Rounded corners */
+            padding: 1rem;
+            margin-bottom: 1rem; /* Space between events */
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Shadow for depth */
+            display: flex; /* Flexbox for image and content */
+            align-items: center; /* Center items vertically */
+        }
+
+        .event img {
+            width: 150px; /* Fixed width for images */
+            height: auto; /* Maintain aspect ratio */
+            border-radius: 8px; /* Rounded corners for images */
+            margin-right: 15px; /* Space between image and text */
+        }
+
+        footer {
+            display: flex;
+            justify-content: space-between; /* Space between address and social links */
+            align-items: center; /* Center align items vertically */
+            background-color: rgba(59, 59, 59, 0.8); /* Darker transparent background for footer */
+            color: #f4f4f4;
+            padding: 1rem 2rem; /* Padding for footer */
+        }
+
+        .footer-left {
+            text-align: left; /* Align text to the left */
+        }
+
+        .footer-center {
+            text-align: center; /* Center text for copyright */
+            flex-grow: 1; /* Allow center to take available space */
+        }
+
+        .socials img {
+            max-width: 30px; /* Social icon size */
+            margin: 0 5px; /* Space between icons */
+        }
+
+        .socials {
+            display: flex; /* Flexbox for social icons */
+            justify-content: flex-end; /* Align social icons to the right */
+        }
+
+        /* Responsive styles */
+        @media (max-width: 600px) {
+            nav {
+                flex-direction: column; /* Stack nav links on small screens */
+                align-items: flex-start;
+            }
+
+            footer {
+                flex-direction: column; /* Stack footer items on small screens */
+                align-items: flex-start; /* Align items to the left */
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="trails.html">Trails</a>
+            <a href="events.html">Events</a>
+            <a href="membership.html">Membership</a>
+            <a href="safety-tips.html">Safety Tips</a>
+            <a href="contact.html">Contact</a>
+            <a href="about.html">About</a>
+        </nav>
+    </header>
+    <main>
+        <h1>Upcoming Events</h1>
+        <p>Join us for exciting hiking events in Zimbabwe! Check back often for new activities!</p>
+        <div class="event-list">
+            <div class="event">
+                <img src="images/fullmoon.webp" alt="Full Moon Hike"> <!-- Replace with your image -->
+                <div>
+                    <h2>Full Moon Hike</h2>
+                    <p>Date: March 30, 2025</p>
+                    <p>Location: Chimanimani Mountains</p>
+                    <p>Description: Experience the breathtaking views of the Chimanimani Mountains under the full moon. A guided hike starting at 6 PM.</p>
+                </div>
+            </div>
+            <div class="event">
+                <img src="images/family.jpg" alt="Family Hiking Day"> <!-- Replace with your image -->
+                <div>
+                    <h2>Family Hiking Day</h2>
+                    <p>Date: April 15, 2025</p>
+                    <p>Location: Hwange National Park</p>
+                    <p>Description: Bring your family for a fun day of hiking and exploring the beautiful landscapes of Hwange. Activities for all ages!</p>
+                </div>
+            </div>
+            <div class="event">
+                <img src="images/wildlife.jpg" alt="Wildlife Photography Workshop"> <!-- Replace with your image -->
+                <div>
+                    <h2>Wildlife Photography Workshop</h2>
+                    <p>Date: May 7, 2025</p>
+                    <p>Location: Matobo National Park</p>
+                    <p>Description: Join us for a day of hiking and photography. Learn how to capture stunning wildlife images in the remarkable Matobo National Park.</p>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <div class="footer-left">
+            <p class="mcoc-bold">Bishop Wilderness Explorers</p>
+            <p>123 Main Street, Gweru, Zimbabwe</p>
+            <p>+263 77 386 7878</p>
+            <p>chimutapiran@gmail.com</p>
+        </div>
+        <div class="footer-center">
+            <div class="bq-copyright">
+                <p>&copy; <span id="currentyear"></span> Nyasha Chimutapira, WDD 231</p>
+                <p id="lastModified"></p>
+            </div>
+        </div>
+        <div class="socials">
+            <a href="https://twitter.com/" target="_blank">
+                <img src="images/xlogo.png" alt="Twitter Logo">
+            </a>
+            <a href="https://www.facebook.com/" target="_blank">
+                <img src="images/facebook.svg" alt="Facebook Logo">
+            </a>
+            <a href="https://www.linkedin.com/" target="_blank">
+                <img src="images/linkedin.svg" alt="LinkedIn Logo">
+            </a>
+            <a href="https://telegram.org/" target="_blank">
+                <img src="images/telegram.jpg" alt="Telegram Logo">
+            </a>
+        </div>
+    </footer>
+    <script type="module">
+        document.getElementById('currentyear').textContent = new Date().getFullYear();
+        document.getElementById('lastModified').textContent = 'Last modified: ' + document.lastModified;
+    </script>
+</body>
+</html>

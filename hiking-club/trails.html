@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Hiking Trails">
+    <title>Trails - Bishop Wilderness Explorers</title>
+    <style>
+        body {
+            font-family: 'Sunflower', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url('images/hiking3.jpg'); /* Replace with your background image */
+            background-size: cover; /* Cover the entire background */
+            background-position: center; /* Center the background */
+            color: #f4f4f4; /* Light text color */
+        }
+
+        header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 1rem 2rem;
+            background-color: rgba(59, 59, 59, 0.8); /* Darker transparent background for header */
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+        }
+
+        nav {
+            display: flex;
+            gap: 15px; /* Space between nav links */
+        }
+
+        nav a {
+            color: #f4f4f4; /* Light text color */
+            text-decoration: none;
+            padding: 10px;
+            transition: background-color 0.3s ease; /* Smooth transition */
+        }
+
+        nav a:hover {
+            background-color: #ffcc00; /* Bright highlight on hover */
+            color: #333; /* Dark text on hover */
+        }
+
+        main {
+            padding: 2rem;
+            max-width: 800px; /* Max width for main content */
+            margin: 2rem auto; /* Center the main section */
+            background-color: rgba(42, 42, 42, 0.8); /* Darker background for main content */
+            border-radius: 8px; /* Rounded corners */
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Shadow for depth */
+        }
+
+        h1 {
+            margin-bottom: 1rem; /* Space below the heading */
+            text-align: center; /* Center align heading */
+            color: #ffcc00; /* Bright color for heading */
+        }
+
+        .trail {
+            margin-bottom: 2rem; /* Space between trails */
+            border: 1px solid #ccc; /* Border around trail card */
+            border-radius: 8px; /* Rounded corners */
+            overflow: hidden; /* Hide overflow for rounded corners */
+            background-color: #3b3b3b; /* Dark background for trail card */
+        }
+
+        .trail img {
+            width: 100%; /* Full width image */
+            height: auto; /* Maintain aspect ratio */
+        }
+
+        .trail h2 {
+            margin: 0.5rem; /* Space around title */
+            color: #ffcc00; /* Bright color for title */
+        }
+
+        .trail p {
+            padding: 0 1rem 1rem; /* Padding for description */
+        }
+
+        footer {
+            display: flex;
+            justify-content: space-between; /* Space between address and social links */
+            align-items: center; /* Center align items vertically */
+            background-color: rgba(59, 59, 59, 0.8); /* Darker transparent background for footer */
+            color: #f4f4f4;
+            padding: 1rem 2rem; /* Padding for footer */
+        }
+
+        .footer-left {
+            text-align: left; /* Align text to the left */
+        }
+
+        .footer-center {
+            text-align: center; /* Center text for copyright */
+            flex-grow: 1; /* Allow center to take available space */
+        }
+
+        .socials img {
+            max-width: 30px; /* Social icon size */
+            margin: 0 5px; /* Space between icons */
+        }
+
+        .socials {
+            display: flex; /* Flexbox for social icons */
+            justify-content: flex-end; /* Align social icons to the right */
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="trails.html">Trails</a>
+            <a href="events.html">Events</a>
+            <a href="membership.html">Membership</a>
+            <a href="safety-tips.html">Safety Tips</a>
+            <a href="contact.html">Contact</a>
+            <a href="about.html">About</a>
+        </nav>
+    </header>
+    <main>
+        <h1>Popular Hiking Trails</h1>
+        
+        <div class="trail">
+            <img src="images/chimanimani.jpg" alt="Chimanimani Mountains">
+            <h2>Chimanimani Mountains</h2>
+            <p>The Chimanimani Mountains offer stunning views and diverse wildlife. This trail features rocky terrain and beautiful waterfalls, making it a perfect choice for adventurous hikers.</p>
+        </div>
+
+        <div class="trail">
+            <img src="images/hwange.jpg" alt="Hwange National Park">
+            <h2>Hwange National Park</h2>
+            <p>Known for its large elephant population, Hwange National Park provides a unique hiking experience. The trails are well-marked, and hikers can enjoy spotting various wildlife along the way.</p>
+        </div>
+
+        <div class="trail">
+            <img src="images/matobo.jpg" alt="Matobo National Park">
+            <h2>Matobo National Park</h2>
+            <p>Matobo National Park is famous for its impressive rock formations and rich cultural heritage. Hikers can explore ancient rock art and enjoy breathtaking views from the hilltops.</p>
+        </div>
+
+        <div class="trail">
+            <img src="images/nyanga2.jpg" alt="Nyanga National Park">
+            <h2>Nyanga National Park</h2>
+            <p>Nyanga National Park offers lush landscapes and scenic trails. Hikers can experience the beauty of the Mutarazi Falls and the highest peaks in Zimbabwe.</p>
+        </div>
+        
+    </main>
+    <footer>
+        <div class="footer-left">
+            <p class="mcoc-bold">Bishop Wilderness Explorers</p>
+            <p>123 Main Street, Gweru, Zimbabwe</p>
+            <p>+263 77 386 7878</p>
+            <p>chimutapiran@gmail.com</p>
+        </div>
+        <div class="footer-center">
+            <div class="bq-copyright">
+                <p>&copy; <span id="currentyear"></span> Nyasha Chimutapira, WDD 231</p>
+                <p id="lastModified"></p>
+            </div>
+        </div>
+        <div class="socials">
+            <a href="https://twitter.com/" target="_blank">
+                <img src="images/xlogo.png" alt="Twitter Logo">
+            </a>
+            <a href="https://www.facebook.com/" target="_blank">
+                <img src="images/facebook.svg" alt="Facebook Logo">
+            </a>
+            <a href="https://www.linkedin.com/" target="_blank">
+                <img src="images/linkedin.svg" alt="LinkedIn Logo">
+            </a>
+            <a href="https://telegram.org/" target="_blank">
+                <img src="images/telegram.jpg" alt="Telegram Logo">
+            </a>
+        </div>
+    </footer>
+    <script type="module">
+        document.getElementById('currentyear').textContent = new Date().getFullYear();
+        document.getElementById('lastModified').textContent = 'Last modified: ' + document.lastModified;
+    </script>
+</body>
+</html>
