@@ -1,0 +1,50 @@
+[
+    {
+        "name": "Gweru Main Street Market",
+        "address": "123 Main Street, Gweru, Zimbabwe",
+        "description": "A vibrant market showcasing local crafts and produce.",
+        "image": "images/chitungwiza-crafts.jpg"
+    },
+    {
+        "name": "Gweru Arts Gallery",
+        "address": "456 Arts Ave, Gweru, Zimbabwe",
+        "description": "A gallery featuring local artists and cultural exhibitions.",
+        "image": "images/museum-01.jpg"
+    },
+    {
+        "name": "Gweru Botanical Gardens",
+        "address": "789 Garden Rd, Gweru, Zimbabwe",
+        "description": "Beautiful gardens displaying a variety of flora.",
+        "image": "images/botanical.jpg"
+    },
+    {
+        "name": "Gweru Museum",
+        "address": "101 Museum St, Gweru, Zimbabwe",
+        "description": "A museum dedicated to the history of Gweru and its people.",
+        "image": "images/museum2.jpg"
+    },
+    {
+        "name": "Gweru Sports Complex",
+        "address": "234 Sports Rd, Gweru, Zimbabwe",
+        "description": "A facility offering various sports and recreational activities.",
+        "image": "images/spots.jpg"
+    },
+    {
+        "name": "Gweru Zoo",
+        "address": "567 Zoo Lane, Gweru, Zimbabwe",
+        "description": "Home to a variety of wildlife and educational programs.",
+        "image": "images/zoo3.jpg"
+    },
+    {
+        "name": "Cultural Heritage Center",
+        "address": "890 Heritage Way, Gweru, Zimbabwe",
+        "description": "A center promoting the cultural heritage of the region.",
+        "image": "images/herritage.jpg"
+    },
+    {
+        "name": "Gweru Waterfalls",
+        "address": "345 Falls Rd, Gweru, Zimbabwe",
+        "description": "A scenic spot for hiking and picnicking.",
+        "image": "images/waterfalls.jpg"
+    }
+]

@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Discover the Gweru Area">
+    <meta name="author" content="Nyasha Chimutapira">
+    <title>Discover Gweru</title>
+    <link rel="icon" href="favicon.ico">
+    <link rel="stylesheet" href="styles/normalize.css">
+    <link rel="stylesheet" href="styles/index.css">
+    <link rel="stylesheet" href="styles/discover.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-image: url('images/hero-image.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            color: white;
+            margin: 0;
+        }
+
+        header, footer {
+            background-color: rgba(50, 50, 50, 0.8);
+            padding: 20px;
+            text-align: center;
+        }
+
+        .header-content img {
+            vertical-align: middle;
+            margin-right: 10px;
+        }
+
+        .navigation {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .navigation a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+
+        .navigation a:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+
+        main {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .card {
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            padding: 15px;
+            text-align: center;
+            color: #333;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .card img {
+            width: 100%;
+            height: auto;
+            border-radius: 5px;
+        }
+
+        button {
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 15px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        footer .socials a {
+            margin: 0 10px;
+        }
+
+        .bq-copyright {
+            margin-top: 10px;
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <img src="images/chamber.jpg" alt="Gweru Chamber Logo" width="50">
+            <span class="chamber-title">Gweru Chamber of Commerce</span>
+        </div>
+        <nav aria-label="Main Navigation">
+            <ul class="navigation">
+                <li><a href="index.html" title="Home">Home</a></li>
+                <li><a href="directory.html" title="Directory">Directory</a></li>
+                <li><a href="join.html" title="Join">Join</a></li>
+                <li><a href="discover.html" title="Discover">Discover</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main>
+        <h1>Discover Gweru</h1>
+        <div class="grid-container">
+            <!-- Cards will be populated here -->
+        </div>
+        <div id="visitor-message"></div>
+    </main>
+
+    <footer>
+        <div class="coc-contact">
+            <p class="mcoc-bold">Gweru Chamber of Commerce</p>
+            <p>123 Main Street, Gweru, Zimbabwe</p>
+            <p>+263 77 386 7878</p>
+            <p>chimutapiran@gmail.com</p>
+        </div>
+        <div class="socials">
+            <a href="https://twitter.com/" target="_blank">
+                <img src="images/xlogo.png" alt="Twitter Logo">
+            </a>
+            <a href="https://www.facebook.com/" target="_blank">
+                <img src="images/facebook.svg" alt="Facebook Logo">
+            </a>
+            <a href="https://www.linkedin.com/" target="_blank">
+                <img src="images/linkedin.svg" alt="LinkedIn Logo">
+            </a>
+            <a href="https://telegram.org/" target="_blank">
+                <img src="images/telegram.jpg" alt="Telegram Logo">
+            </a>
+        </div>
+        <div class="bq-copyright">
+            <p>&copy; <span id="currentyear"></span> Nyasha Chimutapira, WDD 231</p>
+            <p id="lastModified"></p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const gridContainer = document.querySelector('.grid-container');
+            const visitorMessage = document.getElementById('visitor-message');
+
+            fetch('data/data.json')
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error(`HTTP error! status: ${response.status}`);
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    data.forEach(item => {
+                        const card = document.createElement('div');
+                        card.classList.add('card');
+                        card.innerHTML = `
+                            <h2>${item.name}</h2>
+                            <figure>
+                                <img src="${item.image}" alt="${item.name}">
+                                <figcaption>${item.address}</figcaption>
+                            </figure>
+                            <p>${item.description}</p>
+                            <button>Learn More</button>
+                        `;
+                        gridContainer.appendChild(card);
+                    });
+                })
+                .catch(error => {
+                    console.error('Error fetching data:', error);
+                });
+
+            const lastVisit = localStorage.getItem('lastVisit');
+            const currentTime = Date.now();
+            const oneDay = 24 * 60 * 60 * 1000;
+
+            if (!lastVisit) {
+                visitorMessage.textContent = "Welcome! Let us know if you have any questions.";
+            } else {
+                const daysSinceLastVisit = Math.floor((currentTime - lastVisit) / oneDay);
+                visitorMessage.textContent = daysSinceLastVisit < 1 ? "Back so soon! Awesome!" : `You last visited ${daysSinceLastVisit} day${daysSinceLastVisit > 1 ? 's' : ''} ago.`;
+            }
+            localStorage.setItem('lastVisit', currentTime);
+        });
+
+        document.getElementById('currentyear').textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>

@@ -2,9 +2,16 @@ const membersContainer = document.querySelector("#members");
 const url = "data/members.json";
 
 async function getMembers() {
-  const response = await fetch(url);
-  const data = await response.json();
-  displayMembers(data);
+  try {
+    const response = await fetch(url);
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
+    const data = await response.json();
+    displayMembers(data);
+  } catch (error) {
+    console.error('Error fetching member data:', error);
+  }
 }
 
 getMembers();
@@ -22,24 +29,27 @@ const displayMembers = (companies) => {
     let membershipLevel = document.createElement("p");
 
     name.textContent = company.name;
-    address.textContent = `${company.address}`;
-    phone.textContent = `${company.phone}`;
+    address.textContent = company.address;
+    phone.textContent = company.phone;
+
     website.href = company.website;
-    website.textContent = company.website;;
+    website.textContent = "Website";
     website.target = "_blank";
+
     membershipLevel.textContent = `Membership: ${company.membership_level === 3 ? "Gold" : company.membership_level === 2 ? "Silver" : "Member"}`;
 
-    image.setAttribute("src", company.imageurl);
+    image.setAttribute("src", company.image);
     image.setAttribute("alt", `Logo of ${company.name}`);
     image.setAttribute("loading", "lazy");
     image.setAttribute("width", "auto");
     image.setAttribute("height", "100");
 
-    card.appendChild(name);
     card.appendChild(image);
+    card.appendChild(name);
     card.appendChild(address);
     card.appendChild(phone);
     card.appendChild(website);
+    card.appendChild(membershipLevel);
 
     membersContainer.appendChild(card);
   });

@@ -23,9 +23,21 @@
   <script src="scripts/forecast.js" defer></script>
   <style>
       .chamber-title {
-          font-family: 'Sunflower', sans-serif; /* Change to desired font */
-          font-size: 2em; /* Adjust size as needed */
-          color: #faf1f1; /* Change color if desired */
+          font-family: 'Sunflower', sans-serif;
+          font-size: 2em;
+          color: #faf1f1;
+      }
+      .member-card {
+          background: rgba(255, 255, 255, 0.9);
+          border-radius: 8px;
+          padding: 15px;
+          margin: 10px;
+          text-align: center;
+      }
+      .member-card img {
+          width: 100%;
+          height: auto;
+          border-radius: 8px;
       }
   </style>
 </head>
@@ -38,13 +50,12 @@
         Chamber of Commerce
       </span>
     </div>
-    <a id="menu" href="#"></a>
     <nav aria-label="Main Navigation">
       <ul class="navigation">
         <li><a href="index.html" title="Home">Home</a></li>
         <li><a href="directory.html" title="Directory">Directory</a></li>
         <li><a href="join.html" title="Join">Join</a></li>
-        <li><a href="#" target="_blank" title="Discover">Discover</a></li>
+        <li><a href="discover.html" target="_blank" title="Discover">Discover</a></li>
       </ul>
     </nav> 
   </header>
@@ -55,54 +66,8 @@
     <div class="cta-join-button">
       <button>Join Chamber of Commerce</button>
     </div>
-    <div id="general-info">
-      <section class="current-events">
-        <h2 id="current-events-header">Events</h2>
-        <div class="events-table">
-          <div class="event-row header">
-            <div class="event-name">Event</div>
-            <div class="event-date">Date/Time</div>
-            <div class="event-location">Location</div>
-          </div>
-          <div class="event-row">
-            <div class="event-name">Gweru Main Street Market</div>
-            <div class="event-date">Saturdays, Apr–Oct, 9:00 AM – 2:00 PM</div>
-            <div class="event-location">123 Main Street, Gweru, Zimbabwe</div>
-          </div>
-          <div class="event-row">
-            <div class="event-name">Sparklight Movie Night</div>
-            <div class="event-date">Fridays, Jun–Aug, around sunset</div>
-            <div class="event-location">456 Second Street, Bulawayo, Zimbabwe</div>
-          </div>
-          <div class="event-row">
-            <div class="event-name">Concerts on Broadway</div>
-            <div class="event-date">Annually in September, evenings</div>
-            <div class="event-location">789 Third Avenue, Gweru, Zimbabwe</div>
-          </div>
-          <div class="event-row">
-            <div class="event-name">Christmas in Mutare</div>
-            <div class="event-date">Late Nov–Dec, varies</div>
-            <div class="event-location">101 Fourth Street, Mutare, Zimbabwe</div>
-          </div>
-        </div>
-      </section>      
-      <div class="weather-card" aria-live="polite">
-        <h2 id="current-weather-header">Current Weather</h2>
-        <h2 id="town">Weather in Gweru</h2>
-        <img id="graphic" src="images/.jpg" alt="Loading weather graphic">
-        <p id="description">Loading weather...</p>
-        <p id="temperature">--°F</p>
-      </div>
-      <div class="weather-forecast">
-        <h2 id="weather-forecast-header">Weather Forecast</h2>
-        <p id="today">--°F</p>
-        <p id="tomorrow">--°F</p>
-        <p id="day-after">--°F</p>
-      </div>      
-    </div>
-    <!-- <h2 class="company-spotlight">Company Spotlight</h2> -->
-    <div id="members">
-    </div>
+    
+    <div id="members"></div>
   </main>
   
   <footer>
@@ -131,5 +96,64 @@
       <p id="lastModified"></p>
     </div>
   </footer>  
+
+  <script>
+    const membersContainer = document.querySelector("#members");
+    const url = "data/members.json";
+
+    async function getMembers() {
+      try {
+        const response = await fetch(url);
+        if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        const data = await response.json();
+        displayMembers(data.slice(0, 3)); // Display only the first 3 members
+      } catch (error) {
+        console.error('Error fetching member data:', error);
+      }
+    }
+
+    const displayMembers = (companies) => {
+      companies.forEach(company => {
+        let card = document.createElement("section");
+        card.classList.add("member-card");
+        
+        let name = document.createElement("h2");
+        let image = document.createElement("img");
+        let address = document.createElement("p");
+        let phone = document.createElement("p");
+        let website = document.createElement("a");
+        let membershipLevel = document.createElement("p");
+
+        name.textContent = company.name;
+        address.textContent = company.address;
+        phone.textContent = company.phone;
+
+        website.href = company.website;
+        website.textContent = "Website";
+        website.target = "_blank";
+
+        membershipLevel.textContent = `Membership: ${company.membership_level === 3 ? "Gold" : company.membership_level === 2 ? "Silver" : "Member"}`;
+
+        image.setAttribute("src", company.image);
+        image.setAttribute("alt", `Logo of ${company.name}`);
+        image.setAttribute("loading", "lazy");
+        image.setAttribute("width", "auto");
+        image.setAttribute("height", "100");
+
+        card.appendChild(image);
+        card.appendChild(name);
+        card.appendChild(address);
+        card.appendChild(phone);
+        card.appendChild(website);
+        card.appendChild(membershipLevel);
+
+        membersContainer.appendChild(card);
+      });
+    };
+
+    getMembers();
+  </script>
 </body>
 </html>

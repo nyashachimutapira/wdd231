@@ -1,0 +1,941 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Join Gweru Chamber of Commerce - Become a member and grow your business with our network">
+    <meta name="author" content="Nyasha Chimutapira">
+    <title>Join Gweru Chamber of Commerce</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nova+Cut&family=Sunflower:wght@300&display=swap" rel="stylesheet">
+    <link rel="icon" href="images/icons-favicon.png">
+    <style>
+        /* Reset and Base Styles */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            font-family: 'Sunflower', sans-serif;
+            background-image: url('images/chamber3.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* Accessibility and Contrast Fixes */
+        a {
+            color: #0056b3;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        a:hover {
+            text-decoration: underline;
+        }
+
+        /* Header Styles */
+        header {
+            background-color: rgba(30, 30, 30, 0.95);
+            color: white;
+            padding: 15px 20px;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        .header-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .logo-container {
+            display: flex;
+            align-items: center;
+        }
+        
+        .chamber-title {
+            font-size: 1.8em;
+            margin-left: 15px;
+            font-weight: bold;
+        }
+
+        /* Navigation Styles */
+        .hamburger {
+            display: none;
+            cursor: pointer;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+        }
+        
+        nav {
+            margin-top: 10px;
+        }
+        
+        .navigation {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+        }
+        
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 5px 10px;
+            border-radius: 4px;
+            transition: all 0.3s;
+        }
+        
+        nav a:hover, nav a.active {
+            background-color: #ffcc00;
+            color: #333;
+        }
+
+        /* Main Content Styles */
+        main {
+            padding: 30px 20px;
+            max-width: 1200px;
+            margin: 20px auto;
+        }
+        
+        .join-container {
+            background-color: rgba(255, 255, 255, 0.95);
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+            margin-bottom: 30px;
+            animation: fadeIn 0.8s ease-in-out;
+        }
+        
+        h1 {
+            text-align: center;
+            color: #0056b3;
+            margin-bottom: 20px;
+            font-size: 2.2em;
+        }
+        
+        .cta-join-button {
+            text-align: center;
+            margin: 25px 0;
+        }
+        
+        .cta-join-button button {
+            padding: 12px 25px;
+            font-size: 1.3em;
+            background-color: #0056b3;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+        }
+        
+        .cta-join-button button:hover {
+            background-color: #003d82;
+            transform: translateY(-3px);
+        }
+        
+        .cta-join-button button:active {
+            transform: translateY(1px);
+        }
+
+        /* Form Styles */
+        .form-container {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        label {
+            font-weight: bold;
+            margin-bottom: 5px;
+            color: #444;
+        }
+        
+        input[type="text"],
+        input[type="email"],
+        input[type="tel"],
+        select,
+        textarea {
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 1em;
+            transition: border 0.3s;
+        }
+        
+        input:focus,
+        select:focus,
+        textarea:focus {
+            border-color: #0056b3;
+            outline: none;
+            box-shadow: 0 0 5px rgba(0, 86, 179, 0.3);
+        }
+        
+        textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+        
+        input[type="submit"] {
+            padding: 12px 25px;
+            background-color: #0056b3;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1.1em;
+            transition: all 0.3s;
+            margin-top: 10px;
+        }
+        
+        input[type="submit"]:hover {
+            background-color: #003d82;
+        }
+
+        /* Membership Cards Styles */
+        .membership-section {
+            margin-top: 40px;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 30px;
+            color: #0056b3;
+        }
+        
+        .membership-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            margin-top: 20px;
+        }
+        
+        .card {
+            border: 1px solid #ddd;
+            padding: 25px;
+            border-radius: 8px;
+            transition: all 0.3s;
+            background-color: rgba(250, 250, 250, 0.95);
+            text-align: center;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: #0056b3;
+            transition: height 0.3s;
+        }
+        
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 25px rgba(0, 0, 0, 0.15);
+            cursor: pointer;
+        }
+        
+        .card:hover::before {
+            height: 8px;
+        }
+        
+        .card h3 {
+            color: #0056b3;
+            margin-bottom: 15px;
+            font-size: 1.5em;
+        }
+        
+        .card p {
+            margin: 10px 0;
+            color: #555;
+        }
+        
+        .card .price {
+            font-size: 1.3em;
+            font-weight: bold;
+            color: #333;
+            margin: 15px 0;
+        }
+        
+        .card .learn-more {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 8px 15px;
+            background-color: #0056b3;
+            color: white;
+            border-radius: 4px;
+            transition: all 0.3s;
+        }
+        
+        .card .learn-more:hover {
+            background-color: #003d82;
+            text-decoration: none;
+        }
+        
+        /* Gold card special styling */
+        .card.gold {
+            border-color: #ffd700;
+        }
+        
+        .card.gold::before {
+            background: linear-gradient(90deg, #ffd700, #ffcc00);
+        }
+        
+        .card.gold h3 {
+            color: #b8860b;
+        }
+        
+        /* Silver card special styling */
+        .card.silver {
+            border-color: #c0c0c0;
+        }
+        
+        .card.silver::before {
+            background: linear-gradient(90deg, #c0c0c0, #a9a9a9);
+        }
+        
+        /* Bronze card special styling */
+        .card.bronze {
+            border-color: #cd7f32;
+        }
+        
+        .card.bronze::before {
+            background: linear-gradient(90deg, #cd7f32, #b87333);
+        }
+
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 2000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            animation: fadeIn 0.3s;
+        }
+        
+        .modal-content {
+            background-color: white;
+            margin: 10% auto;
+            padding: 30px;
+            border-radius: 10px;
+            max-width: 600px;
+            box-shadow: 0 5px 30px rgba(0, 0, 0, 0.3);
+            position: relative;
+            animation: slideIn 0.4s;
+        }
+        
+        .close {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            font-size: 28px;
+            font-weight: bold;
+            color: #555;
+            cursor: pointer;
+            transition: color 0.3s;
+        }
+        
+        .close:hover {
+            color: #0056b3;
+        }
+        
+        .modal h2 {
+            color: #0056b3;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #eee;
+        }
+        
+        .benefit-list {
+            list-style: none;
+            margin: 20px 0;
+        }
+        
+        .benefit-list li {
+            margin-bottom: 12px;
+            padding-left: 25px;
+            position: relative;
+        }
+        
+        .benefit-list li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #0056b3;
+            font-weight: bold;
+        }
+        
+        .modal-footer {
+            margin-top: 25px;
+            text-align: center;
+        }
+        
+        .modal-button {
+            padding: 10px 20px;
+            background-color: #0056b3;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        
+        .modal-button:hover {
+            background-color: #003d82;
+        }
+
+        /* Footer Styles */
+        footer {
+            background-color: rgba(30, 30, 30, 0.95);
+            color: white;
+            padding: 30px 20px;
+        }
+        
+        .footer-content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            max-width: 1200px;
+            margin: 0 auto;
+            gap: 30px;
+        }
+        
+        .coc-contact {
+            flex: 1;
+            min-width: 250px;
+        }
+        
+        .mcoc-bold {
+            font-weight: bold;
+            font-size: 1.2em;
+            margin-bottom: 10px;
+        }
+        
+        .socials {
+            display: flex;
+            gap: 15px;
+            align-items: center;
+            flex: 1;
+            justify-content: center;
+            min-width: 200px;
+        }
+        
+        .socials a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            transition: all 0.3s;
+        }
+        
+        .socials a:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+            transform: translateY(-3px);
+        }
+        
+        .socials img {
+            width: 20px;
+            height: 20px;
+            object-fit: contain;
+        }
+        
+        .bq-copyright {
+            flex: 1;
+            text-align: right;
+            min-width: 250px;
+        }
+        
+        /* Thank You Page Styles */
+        .thank-you-container {
+            text-align: center;
+            padding: 50px 20px;
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: rgba(255, 255, 255, 0.95);
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+            animation: fadeIn 0.8s ease-in-out;
+        }
+        
+        .thank-you-icon {
+            font-size: 5em;
+            color: #0056b3;
+            margin-bottom: 20px;
+        }
+        
+        .thank-you-title {
+            font-size: 2.5em;
+            color: #0056b3;
+            margin-bottom: 20px;
+        }
+        
+        .thank-you-message {
+            font-size: 1.2em;
+            margin-bottom: 30px;
+        }
+        
+        .return-home {
+            display: inline-block;
+            padding: 12px 25px;
+            background-color: #0056b3;
+            color: white;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: all 0.3s;
+            margin-top: 20px;
+        }
+        
+        .return-home:hover {
+            background-color: #003d82;
+            text-decoration: none;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        @keyframes slideIn {
+            from { transform: translateY(-50px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+
+        /* Responsive Styles */
+        @media screen and (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .hamburger {
+                display: block;
+                position: absolute;
+                top: 20px;
+                right: 20px;
+            }
+            
+            .navigation {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+                text-align: center;
+                padding: 10px 0;
+            }
+            
+            .navigation.responsive {
+                display: flex;
+            }
+            
+            .chamber-title {
+                margin-right: 50px;
+            }
+            
+            .footer-content {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .bq-copyright {
+                text-align: center;
+            }
+            
+            .modal-content {
+                margin: 20% auto;
+                padding: 20px;
+                width: 90%;
+            }
+        }
+
+        @media screen and (max-width: 480px) {
+            .chamber-title {
+                font-size: 1.5em;
+            }
+            
+            main {
+                padding: 20px 10px;
+            }
+            
+            .join-container {
+                padding: 20px 15px;
+            }
+            
+            h1 {
+                font-size: 1.8em;
+            }
+            
+            .card {
+                padding: 20px 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <div class="logo-container">
+                <img src="images/chamber.jpg" alt="Gweru Chamber Logo" width="50">
+                <span class="chamber-title">Gweru Chamber of Commerce</span>
+            </div>
+            <button class="hamburger" onclick="toggleMenu()">☰</button>
+            <nav aria-label="Main Navigation">
+                <ul class="navigation" id="nav-menu">
+                    <li><a href="index.html" title="Home">Home</a></li>
+                    <li><a href="directory.html" title="Directory">Directory</a></li>
+                    <li><a href="join.html" title="Join" class="active">Join</a></li>
+                    <li><a href="discover.html" title="Discover">Discover</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="join-container">
+            <h1>Join the Gweru Chamber of Commerce</h1>
+            <p class="intro-text" style="text-align: center; margin-bottom: 20px;">
+                Become a member of our thriving business community and unlock valuable networking opportunities, resources, and support for your business growth.
+            </p>
+            
+            <div class="cta-join-button">
+                <button onclick="scrollToForm()">Join Chamber of Commerce</button>
+            </div>
+            
+            <form id="join-form" action="thankyou.html" method="get" class="form-container">
+                <div class="form-group">
+                    <label for="first-name">First Name:</label>
+                    <input type="text" id="first-name" name="first-name" required autocomplete="given-name" title="Please enter your first name">
+                </div>
+                
+                <div class="form-group">
+                    <label for="last-name">Last Name:</label>
+                    <input type="text" id="last-name" name="last-name" required autocomplete="family-name" title="Please enter your last name">
+                </div>
+                
+                <div class="form-group">
+                    <label for="org-title">Organizational Title:</label>
+                    <input type="text" id="org-title" name="org-title" required title="Please enter your title within the organization (minimum 7 characters)" 
+                           pattern="^[A-Za-z\s\-]{7,}$" autocomplete="organization-title">
+                    <small>Must be at least 7 characters, letters, hyphens, and spaces only</small>
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">Email Address:</label>
+                    <input type="email" id="email" name="email" required placeholder="example@example.com" autocomplete="email" title="Please enter a valid email address">
+                </div>
+                
+                <div class="form-group">
+                    <label for="phone">Mobile Phone Number:</label>
+                    <input type="tel" id="phone" name="phone" required autocomplete="tel" title="Please enter your mobile phone number">
+                </div>
+                
+                <div class="form-group">
+                    <label for="business-name">Business Name:</label>
+                    <input type="text" id="business-name" name="business-name" required autocomplete="organization" title="Please enter your business name">
+                </div>
+                
+                <div class="form-group">
+                    <label for="membership-level">Membership Level:</label>
+                    <select id="membership-level" name="membership-level" required title="Please select your membership level">
+                        <option value="" disabled selected>Select a membership level</option>
+                        <option value="NP Membership">NP Membership (No Fee)</option>
+                        <option value="Bronze Membership">Bronze Membership</option>
+                        <option value="Silver Membership">Silver Membership</option>
+                        <option value="Gold Membership">Gold Membership</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="description">Business Description:</label>
+                    <textarea id="description" name="description" title="Please describe your business"></textarea>
+                </div>
+                
+                <input type="hidden" id="timestamp" name="timestamp" value="">
+                <input type="submit" value="Submit Application">
+            </form>
+        </div>
+
+        <div class="membership-section">
+            <h2 class="section-title">Membership Levels & Benefits</h2>
+            <p style="text-align: center; margin-bottom: 30px;">
+                Choose the membership level that best suits your business needs and goals.
+            </p>
+            
+            <div class="membership-cards">
+                <div class="card" onclick="openModal('np-modal')">
+                    <h3>NP Membership</h3>
+                    <div class="price">Free</div>
+                    <p>For non-profit organizations and charities</p>
+                    <a href="#" class="learn-more" onclick="openModal('np-modal'); event.preventDefault();">Learn More</a>
+                </div>
+                
+                <div class="card bronze" onclick="openModal('bronze-modal')">
+                    <h3>Bronze Membership</h3>
+                    <div class="price">$50/year</div>
+                    <p>Perfect for small businesses and startups</p>
+                    <a href="#" class="learn-more" onclick="openModal('bronze-modal'); event.preventDefault();">Learn More</a>
+                </div>
+                
+                <div class="card silver" onclick="openModal('silver-modal')">
+                    <h3>Silver Membership</h3>
+                    <div class="price">$100/year</div>
+                    <p>Ideal for growing businesses</p>
+                    <a href="#" class="learn-more" onclick="openModal('silver-modal'); event.preventDefault();">Learn More</a>
+                </div>
+                
+                <div class="card gold" onclick="openModal('gold-modal')">
+                    <h3>Gold Membership</h3>
+                    <div class="price">$250/year</div>
+                    <p>Premium benefits for established businesses</p>
+                    <a href="#" class="learn-more" onclick="openModal('gold-modal'); event.preventDefault();">Learn More</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modals -->
+        <div id="np-modal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal('np-modal')">&times;</span>
+                <h2>NP Membership Benefits</h2>
+                <p>Our Non-Profit Membership is designed specifically for registered charities and non-profit organizations operating in the Gweru area.</p>
+                
+                <ul class="benefit-list">
+                    <li>Basic listing in the Chamber directory</li>
+                    <li>Access to Chamber networking events</li>
+                    <li>Monthly newsletter subscription</li>
+                    <li>Opportunity to collaborate on community projects</li>
+                    <li>Promotion of your events on Chamber social media</li>
+                </ul>
+                
+                <div class="modal-footer">
+                    <button class="modal-button" onclick="selectMembership('NP Membership')">Select This Membership</button>
+                </div>
+            </div>
+        </div>
+        
+        <div id="bronze-modal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal('bronze-modal')">&times;</span>
+                <h2>Bronze Membership Benefits</h2>
+                <p>Our Bronze Membership is perfect for small businesses and startups looking to establish their presence in the Gweru business community.</p>
+                
+                <ul class="benefit-list">
+                    <li>Enhanced listing in the Chamber directory</li>
+                    <li>Access to all Chamber networking events</li>
+                    <li>Monthly newsletter subscription</li>
+                    <li>Social media mention (quarterly)</li>
+                    <li>Access to business resources and workshops</li>
+                    <li>Discounted rates for Chamber event spaces</li>
+                </ul>
+                
+                <div class="modal-footer">
+                    <button class="modal-button" onclick="selectMembership('Bronze Membership')">Select This Membership</button>
+                </div>
+            </div>
+        </div>
+        
+        <div id="silver-modal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal('silver-modal')">&times;</span>
+                <h2>Silver Membership Benefits</h2>
+                <p>Our Silver Membership offers enhanced benefits for growing businesses looking to expand their network and visibility.</p>
+                
+                <ul class="benefit-list">
+                    <li>Premium listing in the Chamber directory</li>
+                    <li>Access to all Chamber networking events</li>
+                    <li>Monthly newsletter subscription with business spotlight opportunity</li>
+                    <li>Social media promotion (monthly)</li>
+                    <li>Access to exclusive business resources and workshops</li>
+                    <li>50% discount on Chamber event spaces</li>
+                    <li>Participation in Chamber's business mentorship program</li>
+                    <li>Ribbon cutting ceremony for new business or location</li>
+                </ul>
+                
+                <div class="modal-footer">
+                    <button class="modal-button" onclick="selectMembership('Silver Membership')">Select This Membership</button>
+                </div>
+            </div>
+        </div>
+        
+        <div id="gold-modal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal('gold-modal')">&times;</span>
+                <h2>Gold Membership Benefits</h2>
+                <p>Our Gold Membership provides premium benefits and maximum exposure for established businesses in the Gweru area.</p>
+                
+                <ul class="benefit-list">
+                    <li>Featured listing in the Chamber directory</li>
+                    <li>VIP access to all Chamber events</li>
+                    <li>Monthly newsletter subscription with dedicated business feature</li>
+                    <li>Regular social media promotion (bi-weekly)</li>
+                    <li>Access to all business resources and premium workshops</li>
+                    <li>Free use of Chamber event spaces (up to 4 times per year)</li>
+                    <li>Participation in Chamber's business mentorship program</li>
+                    <li>Ribbon cutting ceremony for new business or location</li>
+                    <li>Sponsorship recognition at major Chamber events</li>
+                    <li>Representation in Chamber's government advocacy efforts</li>
+                    <li>Annual business spotlight on Chamber website</li>
+                </ul>
+                
+                <div class="modal-footer">
+                    <button class="modal-button" onclick="selectMembership('Gold Membership')">Select This Membership</button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="coc-contact">
+                <p class="mcoc-bold">Gweru Chamber of Commerce</p>
+                <p>123 Main Street, Gweru, Zimbabwe</p>
+                <p>+263 77 386 7878</p>
+                <p>chimutapiran@gmail.com</p>
+            </div>
+            
+            <div class="socials">
+                <a href="https://twitter.com/" target="_blank" aria-label="Twitter">
+                    <img src="images/xlogo.png" alt="Gweru Chamber X Logo Link">
+                </a>
+                <a href="https://www.facebook.com/" target="_blank" aria-label="Facebook">
+                    <img src="images/facebook.svg" alt="Gweru Chamber Facebook Logo Link">
+                </a>
+                <a href="https://www.linkedin.com/" target="_blank" aria-label="LinkedIn">
+                    <img src="images/linkedin.svg" alt="Gweru Chamber LinkedIn Logo Link">
+                </a>
+                <a href="https://telegram.org/" target="_blank" aria-label="Telegram">
+                    <img src="images/telegram.jpg" alt="Gweru Chamber Telegram Logo Link">
+                </a>
+            </div>
+            
+            <div class="bq-copyright">
+                <p>&copy; <span id="currentyear"></span> Gweru Chamber of Commerce</p>
+                <p>Designed by Nyasha Chimutapira, WDD 231</p>
+                <p id="lastModified"></p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Set timestamp when form is submitted
+        document.getElementById('timestamp').value = new Date().toISOString();
+
+        // Set current year in the footer
+        document.getElementById('currentyear').textContent = new Date().getFullYear();
+        
+        // Set last modified date
+        document.getElementById('lastModified').textContent = "Last Modified: " + document.lastModified;
+        
+        // Toggle mobile menu
+        function toggleMenu() {
+            const navMenu = document.getElementById('nav-menu');
+            navMenu.classList.toggle('responsive');
+        }
+        
+        // Scroll to form function
+        function scrollToForm() {
+            const form = document.getElementById('join-form');
+            form.scrollIntoView({ behavior: 'smooth' });
+        }
+        
+        // Modal functions
+        function openModal(modalId) {
+            document.getElementById(modalId).style.display = "block";
+            document.body.style.overflow = "hidden"; // Prevent scrolling when modal is open
+        }
+
+        function closeModal(modalId) {
+            document.getElementById(modalId).style.display = "none";
+            document.body.style.overflow = "auto"; // Re-enable scrolling
+        }
+
+        // Select membership from modal
+        function selectMembership(level) {
+            const membershipSelect = document.getElementById('membership-level');
+            
+            // Find the option with the matching value
+            for (let i = 0; i < membershipSelect.options.length; i++) {
+                if (membershipSelect.options[i].value === level) {
+                    membershipSelect.selectedIndex = i;
+                    break;
+                }
+            }
+            
+            // Close all modals
+            document.querySelectorAll('.modal').forEach(modal => {
+                modal.style.display = "none";
+            });
+            
+            // Scroll to form
+            scrollToForm();
+            
+            // Highlight the membership field with a pulse animation
+            membershipSelect.style.animation = "pulse 1s";
+            setTimeout(() => {
+                membershipSelect.style.animation = "";
+            }, 1000);
+        }
+
+        // Close modals when clicking outside
+        window.onclick = function(event) {
+            if (event.target.classList.contains('modal')) {
+                event.target.style.display = "none";
+                document.body.style.overflow = "auto"; // Re-enable scrolling
+            }
+        }
+        
+        // Form validation enhancement
+        const form = document.getElementById('join-form');
+        form.addEventListener('submit', function(event) {
+            // Additional validation can be added here if needed
+            
+            // Store form data in sessionStorage for the thank you page
+            const formData = {
+                firstName: document.getElementById('first-name').value,
+                lastName: document.getElementById('last-name').value,
+                email: document.getElementById('email').value,
+                business: document.getElementById('business-name').value,
+                membership: document.getElementById('membership-level').value
+            };
+            
+            sessionStorage.setItem('formData', JSON.stringify(formData));
+        });
+    </script>
+</body>
+</html>

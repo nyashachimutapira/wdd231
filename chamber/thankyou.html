@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Thank you for joining Gweru Chamber of Commerce">
+    <meta name="author" content="Nyasha Chimutapira">
+    <title>Thank You - Gweru Chamber of Commerce</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nova+Cut&family=Sunflower:wght@300&display=swap" rel="stylesheet">
+    <link rel="icon" href="images/icons-favicon.png">
+    <style>
+        /* Reset and Base Styles */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            font-family: 'Sunflower', sans-serif;
+            background-image: url('images/chamber3.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* Header Styles */
+        header {
+            background-color: rgba(30, 30, 30, 0.95);
+            color: white;
+            padding: 15px 20px;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        .header-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .logo-container {
+            display: flex;
+            align-items: center;
+        }
+        
+        .chamber-title {
+            font-size: 1.8em;
+            margin-left: 15px;
+            font-weight: bold;
+        }
+
+        /* Navigation Styles */
+        .hamburger {
+            display: none;
+            cursor: pointer;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+        }
+        
+        nav {
+            margin-top: 10px;
+        }
+        
+        .navigation {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+        }
+        
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 5px 10px;
+            border-radius: 4px;
+            transition: all 0.3s;
+        }
+        
+        nav a:hover, nav a.active {
+            background-color: #ffcc00;
+            color: #333;
+        }
+
+        /* Main Content Styles */
+        main {
+            padding: 50px 20px;
+            max-width: 1200px;
+            margin: 20px auto;
+            min-height: calc(100vh - 300px);
+        }
+        
+        .thank-you-container {
+            text-align: center;
+            padding: 50px 30px;
+            background-color: rgba(255, 255, 255, 0.95);
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+            animation: fadeInUp 1s ease-out;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .checkmark {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            display: block;
+            stroke-width: 2;
+            stroke: #0056b3;
+            stroke-miterlimit: 10;
+            margin: 0 auto 30px;
+            box-shadow: 0 0 0 #0056b3;
+            animation: fill .4s ease-in-out .4s forwards, scale .3s ease-in-out .9s both;
+        }
+        
+        .checkmark-circle {
+            stroke-dasharray: 166;
+            stroke-dashoffset: 166;
+            stroke-width: 2;
+            stroke-miterlimit: 10;
+            stroke: #0056b3;
+            fill: none;
+            animation: stroke 0.6s cubic-bezier(0.65, 0, 0.45, 1) forwards;
+        }
+        
+        .checkmark-check {
+            transform-origin: 50% 50%;
+            stroke-dasharray: 48;
+            stroke-dashoffset: 48;
+            animation: stroke 0.3s cubic-bezier(0.65, 0, 0.45, 1) 0.8s forwards;
+        }
+        
+        .thank-you-title {
+            color: #0056b3;
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            animation: fadeIn 1s ease-in-out 0.5s both;
+        }
+        
+        .thank-you-message {
+            font-size: 1.2em;
+            margin-bottom: 30px;
+            animation: fadeIn 1s ease-in-out 0.7s both;
+        }
+        
+        .application-details {
+            background-color: rgba(240, 240, 240, 0.7);
+            padding: 20px;
+            border-radius: 8px;
+            margin: 30px auto;
+            max-width: 500px;
+            text-align: left;
+            animation: fadeIn 1s ease-in-out 0.9s both;
+        }
+        
+        .application-details h3 {
+            color: #0056b3;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+        
+        .detail-item {
+            margin-bottom: 10px;
+            display: flex;
+        }
+        
+        .detail-label {
+            font-weight: bold;
+            min-width: 150px;
+        }
+        
+        .return-home {
+            display: inline-block;
+            padding: 12px 25px;
+            background-color: #0056b3;
+            color: white;
+            border-radius: 5px;
+            font-weight: bold;
+            text-decoration: none;
+            transition: all 0.3s;
+            margin-top: 20px;
+            animation: fadeIn 1s ease-in-out 1.1s both;
+        }
+        
+        .return-home:hover {
+            background-color: #003d82;
+            transform: translateY(-3px);
+        }
+
+        /* Footer Styles */
+        footer {
+            background-color: rgba(30, 30, 30, 0.95);
+            color: white;
+            padding: 30px 20px;
+        }
+        
+        .footer-content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            max-width: 1200px;
+            margin: 0 auto;
+            gap: 30px;
+        }
+        
+        .coc-contact {
+            flex: 1;
+            min-width: 250px;
+        }
+        
+        .mcoc-bold {
+            font-weight: bold;
+            font-size: 1.2em;
+            margin-bottom: 10px;
+        }
+        
+        .socials {
+            display: flex;
+            gap: 15px;
+            align-items: center;
+            flex: 1;
+            justify-content: center;
+            min-width: 200px;
+        }
+        
+        .socials a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            transition: all 0.3s;
+        }
+        
+        .socials a:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+            transform: translateY(-3px);
+        }
+        
+        .socials img {
+            width: 20px;
+            height: 20px;
+            object-fit: contain;
+        }
+        
+        .bq-copyright {
+            flex: 1;
+            text-align: right;
+            min-width: 250px;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        @keyframes fadeInUp {
+            from { 
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to { 
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes stroke {
+            100% {
+                stroke-dashoffset: 0;
+            }
+        }
+        
+        @keyframes scale {
+            0%, 100% {
+                transform: none;
+            }
+            50% {
+                transform: scale3d(1.1, 1.1, 1);
+            }
+        }
+        
+        @keyframes fill {
+            100% {
+                box-shadow: inset 0 0 0 30px rgba(0, 86, 179, 0.1);
+            }
+        }
+
+        /* Responsive Styles */
+        @media screen and (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .hamburger {
+                display: block;
+                position: absolute;
+                top: 20px;
+                right: 20px;
+            }
+            
+            .navigation {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+                text-align: center;
+                padding: 10px 0;
+            }
+            
+            .navigation.responsive {
+                display: flex;
+            }
+            
+            .chamber-title {
+                margin-right: 50px;
+            }
+            
+            .footer-content {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .bq-copyright {
+                text-align: center;
+            }
+            
+            .detail-item {
+                flex-direction: column;
+            }
+            
+            .detail-label {
+                margin-bottom: 5px;
+            }
+        }
+
+        @media screen and (max-width: 480px) {
+            .chamber-title {
+                font-size: 1.5em;
+            }
+            
+            main {
+                padding: 30px 10px;
+            }
+            
+            .thank-you-container {
+                padding: 30px 20px;
+            }
+            
+            .thank-you-title {
+                font-size: 2em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <div class="logo-container">
+                <img src="images/chamber.jpg" alt="Gweru Chamber Logo" width="50">
+                <span class="chamber-title">Gweru Chamber of Commerce</span>
+            </div>
+            <button class="hamburger" onclick="toggleMenu()">☰</button>
+            <nav aria-label="Main Navigation">
+                <ul class="navigation" id="nav-menu">
+                    <li><a href="index.html" title="Home">Home</a></li>
+                    <li><a href="directory.html" title="Directory">Directory</a></li>
+                    <li><a href="join.html" title="Join" class="active">Join</a></li>
+                    <li><a href="discover.html" title="Discover">Discover</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="thank-you-container">
+            <svg class="checkmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52">
+                <circle class="checkmark-circle" cx="26" cy="26" r="25" fill="none"/>
+                <path class="checkmark-check" fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8"/>
+            </svg>
+            
+            <h1 class="thank-you-title">Thank You!</h1>
+            <p class="thank-you-message">Your application to join the Gweru Chamber of Commerce has been successfully submitted. We appreciate your interest in becoming a member of our business community.</p>
+            
+            <div class="application-details">
+                <h3>Application Summary</h3>
+                <div class="detail-item">
+                    <span class="detail-label">Name:</span>
+                    <span class="detail-value" id="applicant-name">Loading...</span>
+                </div>
+                <div class="detail-item">
+                    <span class="detail-label">Business:</span>
+                    <span class="detail-value" id="business-name">Loading...</span>
+                </div>
+                <div class="detail-item">
+                    <span class="detail-label">Membership Level:</span>
+                    <span class="detail-value" id="membership-level">Loading...</span>
+                </div>
+                <div class="detail-item">
+                    <span class="detail-label">Submission Date:</span>
+                    <span class="detail-value" id="submission-date">Loading...</span>
+                </div>
+            </div>
+            
+            <p>Our team will review your application and contact you within 2-3 business days to complete the membership process.</p>
+            
+            <a href="index.html" class="return-home">Return to Homepage</a>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="coc-contact">
+                <p class="mcoc-bold">Gweru Chamber of Commerce</p>
+                <p>123 Main Street, Gweru, Zimbabwe</p>
+                <p>+263 77 386 7878</p>
+                <p>chimutapiran@gmail.com</p>
+            </div>
+            
+            <div class="socials">
+                <a href="https://twitter.com/" target="_blank" aria-label="Twitter">
+                    <img src="images/xlogo.png" alt="Gweru Chamber X Logo Link">
+                </a>
+                <a href="https://www.facebook.com/" target="_blank" aria-label="Facebook">
+                    <img src="images/facebook.svg" alt="Gweru Chamber Facebook Logo Link">
+                </a>
+                <a href="https://www.linkedin.com/" target="_blank" aria-label="LinkedIn">
+                    <img src="images/linkedin.svg" alt="Gweru Chamber LinkedIn Logo Link">
+                </a>
+                <a href="https://telegram.org/" target="_blank" aria-label="Telegram">
+                    <img src="images/telegram.jpg" alt="Gweru Chamber Telegram Logo Link">
+                </a>
+            </div>
+            
+            <div class="bq-copyright">
+                <p>&copy; <span id="currentyear"></span> Gweru Chamber of Commerce</p>
+                <p>Designed by Nyasha Chimutapira, WDD 231</p>
+                <p id="lastModified"></p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Set current year in the footer
+        document.getElementById('currentyear').textContent = new Date().getFullYear();
+        
+        // Set last modified date
+        document.getElementById('lastModified').textContent = "Last Modified: " + document.lastModified;
+        
+        // Toggle mobile menu
+        function toggleMenu() {
+            const navMenu = document.getElementById('nav-menu');
+            navMenu.classList.toggle('responsive');
+        }
+        
+        // Retrieve form data from sessionStorage
+        window.onload = function() {
+            try {
+                const formData = JSON.parse(sessionStorage.getItem('formData'));
+                
+                if (formData) {
+                    document.getElementById('applicant-name').textContent = formData.firstName + ' ' + formData.lastName;
+                    document.getElementById('business-name').textContent = formData.business;
+                    document.getElementById('membership-level').textContent = formData.membership;
+                    document.getElementById('submission-date').textContent = new Date().toLocaleDateString();
+                } else {
+                    // If no data is found, populate with default values
+                    document.getElementById('applicant-name').textContent = "John Doe";
+                    document.getElementById('business-name').textContent = "Example Business";
+                    document.getElementById('membership-level').textContent = "Silver Membership";
+                    document.getElementById('submission-date').textContent = new Date().toLocaleDateString();
+                }
+            } catch (error) {
+                console.error("Error retrieving form data:", error);
+                
+                // Populate with default values if there's an error
+                document.getElementById('applicant-name').textContent = "John Doe";
+                document.getElementById('business-name').textContent = "Example Business";
+                document.getElementById('membership-level').textContent = "Silver Membership";
+                document.getElementById('submission-date').textContent = new Date().toLocaleDateString();
+            }
+        }
+    </script>
+</body>
+</html>
