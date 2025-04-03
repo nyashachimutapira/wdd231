@@ -3,71 +3,425 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Chamber Home Page">
+  <meta name="description" content="Gweru Chamber of Commerce - Connecting local businesses and promoting economic growth in Gweru, Zimbabwe">
   <meta name="author" content="Nyasha Chimutapira">
   <title>Gweru Chamber of Commerce Home Page</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Nova+Cut&family=Sunflower:wght@300&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles/normalize.css">
-  <link rel="stylesheet" href="styles/index.css">
-  <link rel="icon" href="favicon.ico">
-  <meta property="og:title" content="Chamber Directory Page">
+  <link rel="stylesheet" href="styles/base.css">
+  <link rel="stylesheet" href="styles/medium.css" media="(min-width: 32.5em)">
+  <link rel="stylesheet" href="styles/large.css" media="(min-width: 64em)">
+  <link rel="icon" href="images/icons-favicon.png">
+  <meta property="og:title" content="Gweru Chamber of Commerce - Home">
   <meta property="og:type" content="website">
   <meta property="og:image" content="https://nyashachimutapira.github.io/wdd231/images/chamber_logo.webp">
-  <meta property="og:url" content="https://nyashachimutapira.github.io/wdd231/chamber/directory">
+  <meta property="og:url" content="https://nyashachimutapira.github.io/wdd231/chamber/">
   <script src="scripts/date.js" defer></script>
   <script src="scripts/navigation.js" defer></script>
   <script src="scripts/showcase.js" defer></script>
   <script src="scripts/weather.js" defer></script>
   <script src="scripts/forecast.js" defer></script>
   <style>
+      /* Base styles */
+      * {
+          box-sizing: border-box;
+          margin: 0;
+          padding: 0;
+      }
+      
+      body {
+          font-family: Arial, sans-serif;
+          line-height: 1.6;
+          color: #333;
+          background-color: #f8f9fa;
+      }
+      
+      /* Header styles */
+      header {
+          background-color: #003366;
+          color: #fff;
+          padding: 1rem;
+          position: relative;
+      }
+      
+      .header-content {
+          display: flex;
+          align-items: center;
+          gap: 1rem;
+          margin-bottom: 1rem;
+      }
+      
+      .header-content img {
+          width: 60px;
+          height: 60px;
+          border-radius: 50%;
+      }
+      
       .chamber-title {
           font-family: 'Sunflower', sans-serif;
-          font-size: 2em;
+          font-size: 1.5rem;
           color: #faf1f1;
+          line-height: 1.2;
       }
-      .member-card {
-          background: rgba(255, 255, 255, 0.9);
-          border-radius: 8px;
-          padding: 15px;
-          margin: 10px;
+      
+      /* Navigation styles */
+      nav {
+          width: 100%;
+      }
+      
+      .navigation {
+          list-style: none;
+          display: flex;
+          flex-direction: column;
+          background-color: #003366;
+      }
+      
+      .navigation li {
+          width: 100%;
+      }
+      
+      .navigation a {
+          display: block;
+          padding: 0.8rem;
+          text-decoration: none;
+          color: #faf1f1;
+          text-align: center;
+          border-top: 1px solid rgba(255, 255, 255, 0.2);
+          transition: background-color 0.3s;
+      }
+      
+      .navigation a:hover {
+          background-color: rgba(255, 255, 255, 0.1);
+      }
+      
+      .navigation a.active {
+          background-color: #f2a900;
+          color: #003366;
+      }
+      
+      #hamburger-btn {
+          background: none;
+          border: none;
+          color: #fff;
+          font-size: 1.5rem;
+          cursor: pointer;
+          position: absolute;
+          top: 1rem;
+          right: 1rem;
+          display: block;
+      }
+      
+      /* Main content styles */
+      main {
+          max-width: 1200px;
+          margin: 0 auto;
+          padding: 1rem;
+      }
+      
+      h1 {
+          color: #003366;
+          margin: 1rem 0;
           text-align: center;
       }
-      .member-card img {
+      
+      #hero-img {
           width: 100%;
           height: auto;
           border-radius: 8px;
+          margin-bottom: 1rem;
+          box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+      }
+      
+      .cta-join-button {
+          text-align: center;
+          margin: 1rem 0 2rem;
+      }
+      
+      .cta-join-button button {
+          background-color: #f2a900;
+          color: #003366;
+          border: none;
+          padding: 0.8rem 1.5rem;
+          font-size: 1rem;
+          font-weight: bold;
+          border-radius: 5px;
+          cursor: pointer;
+          transition: background-color 0.3s;
+          box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+      }
+      
+      .cta-join-button button:hover {
+          background-color: #e09600;
+      }
+      
+      /* Weather section */
+      .weather-section {
+          background-color: white;
+          border-radius: 8px;
+          padding: 1.5rem;
+          margin: 2rem 0;
+          box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+      }
+      
+      .weather-section h2 {
+          color: #003366;
+          margin-bottom: 1rem;
+          text-align: center;
+      }
+      
+      .weather-container {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+      }
+      
+      .weather-icon {
+          width: 80px;
+          height: 80px;
+      }
+      
+      .weather-temp {
+          font-size: 2rem;
+          font-weight: bold;
+          margin: 0.5rem 0;
+      }
+      
+      .weather-desc {
+          text-transform: capitalize;
+          margin-bottom: 1rem;
+      }
+      
+      .weather-details {
+          width: 100%;
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          gap: 0.5rem;
+          margin-top: 1rem;
+      }
+      
+      .weather-detail {
+          display: flex;
+          justify-content: space-between;
+          padding: 0.5rem;
+          border-bottom: 1px solid #eee;
+      }
+      
+      .forecast-container {
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+          gap: 1rem;
+          margin-top: 1.5rem;
+      }
+      
+      .forecast-day {
+          background-color: rgba(0, 51, 102, 0.05);
+          border-radius: 8px;
+          padding: 0.8rem;
+          text-align: center;
+      }
+      
+      /* Member showcase styles */
+      #members {
+          display: grid;
+          grid-template-columns: 1fr;
+          gap: 1.5rem;
+          margin-top: 2rem;
+      }
+      
+      .member-card {
+          background: white;
+          border-radius: 8px;
+          padding: 1.5rem;
+          box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+          text-align: center;
+      }
+      
+      .member-card img {
+          width: 100%;
+          max-width: 150px;
+          height: auto;
+          border-radius: 8px;
+          margin-bottom: 1rem;
+      }
+      
+      .member-card h2 {
+          color: #003366;
+          margin-bottom: 0.5rem;
+          font-size: 1.3rem;
+      }
+      
+      .member-card p {
+          margin-bottom: 0.5rem;
+      }
+      
+      .member-card a {
+          display: inline-block;
+          color: #e63946;
+          text-decoration: none;
+          font-weight: bold;
+          margin: 0.5rem 0;
+      }
+      
+      .member-card a:hover {
+          text-decoration: underline;
+      }
+      
+      /* Footer styles */
+      footer {
+          background-color: #003366;
+          color: #fff;
+          padding: 2rem 1rem;
+          text-align: center;
+      }
+      
+      .coc-contact {
+          margin-bottom: 1rem;
+      }
+      
+      .mcoc-bold {
+          font-weight: bold;
+          font-size: 1.2rem;
+          margin-bottom: 0.5rem;
+      }
+      
+      .socials {
+          display: flex;
+          justify-content: center;
+          gap: 1rem;
+          margin: 1rem 0;
+      }
+      
+      .socials a img {
+          width: 32px;
+          height: 32px;
+          border-radius: 50%;
+      }
+      
+      .bq-copyright {
+          border-top: 1px solid rgba(255, 255, 255, 0.2);
+          padding-top: 1rem;
+          font-size: 0.9rem;
+      }
+      
+      /* Medium screen styles */
+      @media screen and (min-width: 32.5em) {
+          .chamber-title {
+              font-size: 1.8rem;
+          }
+          
+          #hamburger-btn {
+              display: none;
+          }
+          
+          .navigation {
+              flex-direction: row;
+          }
+          
+          .navigation li {
+              width: auto;
+          }
+          
+          .navigation a {
+              border: none;
+          }
+          
+          #members {
+              grid-template-columns: repeat(2, 1fr);
+          }
+      }
+      
+      /* Large screen styles */
+      @media screen and (min-width: 64em) {
+          header {
+              display: flex;
+              justify-content: space-between;
+              align-items: center;
+          }
+          
+          .header-content {
+              margin-bottom: 0;
+          }
+          
+          .chamber-title {
+              font-size: 2rem;
+          }
+          
+          #members {
+              grid-template-columns: repeat(3, 1fr);
+          }
       }
   </style>
 </head>
 <body>
   <header>
     <div class="header-content">
-      <img src="images/chamber.jpg" alt="Idaho Chamber Logo">
+      <img src="images/chamber_logo.webp" alt="Gweru Chamber Logo">
       <span class="chamber-title">
         Gweru <br>
         Chamber of Commerce
       </span>
     </div>
+    <button id="hamburger-btn" aria-label="Toggle menu">☰</button>
     <nav aria-label="Main Navigation">
-      <ul class="navigation">
-        <li><a href="index.html" title="Home">Home</a></li>
+      <ul class="navigation" id="primary-nav">
+        <li><a href="index.html" title="Home" class="active">Home</a></li>
         <li><a href="directory.html" title="Directory">Directory</a></li>
         <li><a href="join.html" title="Join">Join</a></li>
-        <li><a href="discover.html" target="_blank" title="Discover">Discover</a></li>
+        <li><a href="discover.html" title="Discover">Discover</a></li>
       </ul>
     </nav> 
   </header>
 
   <main>
-    <h1>Home</h1>
-    <img id="hero-img" src="images/gweru1.jpg" alt="Gweru, Idaho Neighborhood">
+    <h1>Welcome to Gweru Chamber of Commerce</h1>
+    <img id="hero-img" src="images/gweru1.jpg" alt="Gweru City Skyline">
     <div class="cta-join-button">
-      <button>Join Chamber of Commerce</button>
+      <button onclick="location.href='join.html'">Join Chamber of Commerce</button>
     </div>
     
-    <div id="members"></div>
+    <section class="weather-section">
+      <h2>Current Weather in Gweru</h2>
+      <div class="weather-container">
+        <div id="weather-icon-container">
+          <img id="weather-icon" src="images/weather/cloudy.png" alt="Weather icon" class="weather-icon">
+        </div>
+        <div id="weather-temp" class="weather-temp">--°C</div>
+        <div id="weather-desc" class="weather-desc">Loading weather data...</div>
+        
+        <div class="weather-details">
+          <div class="weather-detail">
+            <span>Humidity:</span>
+            <span id="humidity">--%</span>
+          </div>
+          <div class="weather-detail">
+            <span>Wind Speed:</span>
+            <span id="wind-speed">-- km/h</span>
+          </div>
+          <div class="weather-detail">
+            <span>Feels Like:</span>
+            <span id="feels-like">--°C</span>
+          </div>
+          <div class="weather-detail">
+            <span>Last Updated:</span>
+            <span id="last-updated">--:--</span>
+          </div>
+        </div>
+      </div>
+      
+      <h3 style="margin-top: 1.5rem; text-align: center;">3-Day Forecast</h3>
+      <div class="forecast-container" id="forecast-container">
+        <!-- Forecast data will be inserted here -->
+      </div>
+    </section>
+    
+    <section>
+      <h2 style="color: #003366; text-align: center; margin-bottom: 1.5rem;">Featured Business Members</h2>
+      <div id="members">
+        <!-- Member cards will be inserted here -->
+      </div>
+    </section>
   </main>
   
   <footer>
@@ -79,16 +433,16 @@
     </div>
     <div class="socials">
       <a href="https://twitter.com/" target="_blank">
-        <img src="images/xlogo.png" alt="Idaho Chamber X Logo Link">
+        <img src="images/xlogo.png" alt="Gweru Chamber X Logo Link">
       </a>
       <a href="https://www.facebook.com/" target="_blank">
-        <img src="images/facebook.svg" alt="Idaho Chamber Facebook Logo Link">
+        <img src="images/facebook.svg" alt="Gweru Chamber Facebook Logo Link">
       </a>
       <a href="https://www.linkedin.com/" target="_blank">
-        <img src="images/linkedin.svg" alt="Idaho Chamber LinkedIn Logo Link">
+        <img src="images/linkedin.svg" alt="Gweru Chamber LinkedIn Logo Link">
       </a>
       <a href="https://telegram.org/" target="_blank">
-        <img src="images/telegram.jpg" alt="Idaho Chamber Telegram Logo Link">
+        <img src="images/telegram.jpg" alt="Gweru Chamber Telegram Logo Link">
       </a>
     </div>
     <div class="bq-copyright">
@@ -98,6 +452,140 @@
   </footer>  
 
   <script>
+    // Navigation toggle functionality
+    document.getElementById('hamburger-btn').addEventListener('click', function() {
+      document.getElementById('primary-nav').classList.toggle('responsive');
+    });
+    
+    // Current date and last modified
+    document.addEventListener('DOMContentLoaded', function() {
+      const currentYear = new Date().getFullYear();
+      document.getElementById('currentyear').textContent = currentYear;
+      
+      const lastModified = document.lastModified;
+      document.getElementById('lastModified').textContent = `Last Modified: ${lastModified}`;
+    });
+    
+    // Weather API integration
+    async function fetchWeather() {
+      try {
+        // Gweru coordinates: -19.516, 29.8167
+        const apiKey = '30d4741c779ba94c470ca1f63045390a'; // Replace with your API key
+        const lat = -19.516;
+        const lon = 29.8167;
+        const url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric&appid=${apiKey}`;
+        
+        const response = await fetch(url);
+        if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        
+        const data = await response.json();
+        displayWeather(data);
+        
+        // Fetch forecast data
+        fetchForecast(lat, lon, apiKey);
+      } catch (error) {
+        console.error('Error fetching weather data:', error);
+        document.getElementById('weather-desc').textContent = 'Weather data unavailable';
+      }
+    }
+    
+    function displayWeather(data) {
+      const temp = document.getElementById('weather-temp');
+      const desc = document.getElementById('weather-desc');
+      const icon = document.getElementById('weather-icon');
+      const humidity = document.getElementById('humidity');
+      const windSpeed = document.getElementById('wind-speed');
+      const feelsLike = document.getElementById('feels-like');
+      const lastUpdated = document.getElementById('last-updated');
+      
+      temp.textContent = `${Math.round(data.main.temp)}°C`;
+      desc.textContent = data.weather[0].description;
+      
+      const iconCode = data.weather[0].icon;
+      icon.src = `https://openweathermap.org/img/wn/${iconCode}@2x.png`;
+      icon.alt = data.weather[0].description;
+      
+      humidity.textContent = `${data.main.humidity}%`;
+      windSpeed.textContent = `${Math.round(data.wind.speed * 3.6)} km/h`; // Convert m/s to km/h
+      feelsLike.textContent = `${Math.round(data.main.feels_like)}°C`;
+      
+      const date = new Date(data.dt * 1000);
+      lastUpdated.textContent = date.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+    }
+    
+    async function fetchForecast(lat, lon, apiKey) {
+      try {
+        const url = `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&units=metric&appid=${apiKey}`;
+        
+        const response = await fetch(url);
+        if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        
+        const data = await response.json();
+        displayForecast(data);
+      } catch (error) {
+        console.error('Error fetching forecast data:', error);
+      }
+    }
+    
+    function displayForecast(data) {
+      const forecastContainer = document.getElementById('forecast-container');
+      forecastContainer.innerHTML = '';
+      
+      // Get one forecast per day (noon) for the next 3 days
+      const dailyForecasts = [];
+      const today = new Date().getDate();
+      
+      for (const item of data.list) {
+        const forecastDate = new Date(item.dt * 1000);
+        const forecastDay = forecastDate.getDate();
+        
+        // Skip today's forecasts
+        if (forecastDay === today) continue;
+        
+        // Check if we already have a forecast for this day
+        const existingDay = dailyForecasts.find(d => new Date(d.dt * 1000).getDate() === forecastDay);
+        
+        // If we don't have a forecast for this day yet, or if this forecast is closer to noon
+        if (!existingDay || Math.abs(forecastDate.getHours() - 12) < Math.abs(new Date(existingDay.dt * 1000).getHours() - 12)) {
+          // Remove existing forecast for this day if it exists
+          if (existingDay) {
+            const index = dailyForecasts.indexOf(existingDay);
+            dailyForecasts.splice(index, 1);
+          }
+          
+          // Add this forecast
+          dailyForecasts.push(item);
+        }
+        
+        // Stop once we have 3 days
+        if (dailyForecasts.length === 3) break;
+      }
+      
+      // Display the forecasts
+      dailyForecasts.forEach(forecast => {
+        const date = new Date(forecast.dt * 1000);
+        const dayName = date.toLocaleDateString('en-US', { weekday: 'short' });
+        const dayDate = date.toLocaleDateString('en-US', { day: 'numeric', month: 'short' });
+        
+        const forecastDay = document.createElement('div');
+        forecastDay.className = 'forecast-day';
+        
+        forecastDay.innerHTML = `
+          <div style="font-weight: bold;">${dayName}, ${dayDate}</div>
+          <img src="https://openweathermap.org/img/wn/${forecast.weather[0].icon}.png" alt="${forecast.weather[0].description}" style="width: 50px; height: 50px;">
+          <div style="font-weight: bold;">${Math.round(forecast.main.temp)}°C</div>
+          <div>${forecast.weather[0].description}</div>
+        `;
+        
+        forecastContainer.appendChild(forecastDay);
+      });
+    }
+    
+    // Members data
     const membersContainer = document.querySelector("#members");
     const url = "data/members.json";
 
@@ -111,10 +599,14 @@
         displayMembers(data.slice(0, 3)); // Display only the first 3 members
       } catch (error) {
         console.error('Error fetching member data:', error);
+        // Fallback to sample data if fetch fails
+        displaySampleMembers();
       }
     }
 
     const displayMembers = (companies) => {
+      membersContainer.innerHTML = '';
+      
       companies.forEach(company => {
         let card = document.createElement("section");
         card.classList.add("member-card");
@@ -134,13 +626,13 @@
         website.textContent = "Website";
         website.target = "_blank";
 
-        membershipLevel.textContent = `Membership: ${company.membership_level === 3 ? "Gold" : company.membership_level === 2 ? "Silver" : "Member"}`;
+        membershipLevel.textContent = `Membership: ${company.membership_level === 3 ? "Gold" : company.membership_level === 2 ? "Silver" : "Bronze"}`;
 
         image.setAttribute("src", company.image);
         image.setAttribute("alt", `Logo of ${company.name}`);
         image.setAttribute("loading", "lazy");
-        image.setAttribute("width", "auto");
-        image.setAttribute("height", "100");
+        image.setAttribute("width", "150");
+        image.setAttribute("height", "auto");
 
         card.appendChild(image);
         card.appendChild(name);
@@ -152,8 +644,44 @@
         membersContainer.appendChild(card);
       });
     };
+    
+    // Sample member data as fallback
+    function displaySampleMembers() {
+      const sampleMembers = [
+        {
+          name: "Gweru City Bank",
+          address: "45 Main Street, Gweru",
+          phone: "+263 54 223 4567",
+          website: "https://www.gwerucitybank.co.zw",
+          membership_level: 3,
+          image: "images/members/bank.jpg"
+        },
+        {
+          name: "Midlands Hotel",
+          address: "78 Cecil Avenue, Gweru",
+          phone: "+263 54 224 8901",
+          website: "https://www.midlandshotel.co.zw",
+          membership_level: 2,
+          image: "images/members/hotel.jpg"
+        },
+        {
+          name: "Gweru Tech Solutions",
+          address: "12 Innovation Drive, Gweru",
+          phone: "+263 77 456 7890",
+          website: "https://www.gwerutech.co.zw",
+          membership_level: 1,
+          image: "images/members/tech.jpg"
+        }
+      ];
+      
+      displayMembers(sampleMembers);
+    }
 
-    getMembers();
+    // Initialize the page
+    document.addEventListener('DOMContentLoaded', function() {
+      fetchWeather();
+      getMembers();
+    });
   </script>
 </body>
 </html>
