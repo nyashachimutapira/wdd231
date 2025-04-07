@@ -3,34 +3,52 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Discover the Gweru Area">
+    <meta name="description" content="Discover the Gweru Area - Explore attractions, businesses, and landmarks in Gweru, Zimbabwe">
     <meta name="author" content="Nyasha Chimutapira">
     <title>Discover Gweru</title>
     <link rel="icon" href="favicon.ico">
-    <link rel="stylesheet" href="styles/normalize.css">
-    <link rel="stylesheet" href="styles/index.css">
-    <link rel="stylesheet" href="styles/discover.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
     <style>
+        /* Reset and base styles */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        
         body {
             font-family: 'Roboto', sans-serif;
-            background-image: url('images/hero-image.jpg');
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            color: white;
+            color: #333;
             margin: 0;
+            background-color: #f5f5f5;
+            line-height: 1.6;
         }
 
+        /* Improved color contrast for accessibility */
         header, footer {
-            background-color: rgba(50, 50, 50, 0.8);
+            background-color: #1a365d;
             padding: 20px;
             text-align: center;
+            color: #ffffff;
+        }
+
+        .header-content {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 15px;
         }
 
         .header-content img {
-            vertical-align: middle;
             margin-right: 10px;
+            width: 50px;
+            height: 50px;
+            object-fit: cover;
+        }
+
+        .chamber-title {
+            font-size: 1.5rem;
+            font-weight: 700;
         }
 
         .navigation {
@@ -38,82 +56,200 @@
             padding: 0;
             display: flex;
             justify-content: center;
-            gap: 20px;
+            flex-wrap: wrap;
+            gap: 10px;
         }
 
         .navigation a {
-            color: white;
+            color: #ffffff;
             text-decoration: none;
             padding: 10px 15px;
             border-radius: 5px;
             transition: background 0.3s;
+            font-weight: 500;
+            display: block;
         }
 
         .navigation a:hover {
-            background-color: rgba(255, 255, 255, 0.2);
+            background-color: #2c5282;
         }
 
         main {
+            max-width: 1200px;
+            margin: 0 auto;
             padding: 20px;
+        }
+
+        h1 {
+            color: #1a365d;
             text-align: center;
+            margin: 20px 0 30px;
+            font-size: 2.5rem;
         }
 
         .grid-container {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 20px;
-            padding: 20px;
+            gap: 30px;
+            margin-bottom: 40px;
         }
 
         .card {
             background: #fff;
             border-radius: 8px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-            padding: 15px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
             text-align: center;
-            color: #333;
             transition: transform 0.3s, box-shadow 0.3s;
         }
 
         .card:hover {
-            transform: scale(1.05);
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .card h2 {
+            color: #1a365d;
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+        }
+
+        .card figure {
+            margin-bottom: 15px;
         }
 
         .card img {
             width: 100%;
             height: auto;
             border-radius: 5px;
+            margin-bottom: 10px;
+        }
+
+        .card figcaption {
+            font-style: italic;
+            color: #666;
+        }
+
+        .card p {
+            margin-bottom: 20px;
+            color: #333;
         }
 
         button {
-            background-color: #007BFF;
+            background-color: #2b6cb0;
             color: white;
             border: none;
             border-radius: 5px;
-            padding: 10px 15px;
+            padding: 10px 20px;
             cursor: pointer;
             transition: background 0.3s;
+            font-weight: 500;
         }
 
         button:hover {
-            background-color: #0056b3;
+            background-color: #1a4a8e;
         }
 
-        footer .socials a {
-            margin: 0 10px;
+        #visitor-message {
+            background-color: #ebf8ff;
+            color: #2c5282;
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+            margin: 20px 0;
+            font-weight: 500;
+        }
+
+        /* Rearranged footer styles */
+        footer {
+            padding: 30px 20px;
+        }
+
+        .footer-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .coc-contact {
+            text-align: left;
+            flex: 1;
+            min-width: 250px;
+            margin-bottom: 20px;
+        }
+
+        .mcoc-bold {
+            font-weight: 700;
+            font-size: 1.2rem;
+            margin-bottom: 5px;
         }
 
         .bq-copyright {
-            margin-top: 10px;
-            font-size: 0.9em;
+            text-align: center;
+            flex: 2;
+            min-width: 250px;
+            margin: 0 20px 20px;
+            color: #cbd5e0;
+        }
+
+        .socials {
+            text-align: right;
+            flex: 1;
+            min-width: 250px;
+            margin-bottom: 20px;
+            display: flex;
+            justify-content: flex-end;
+            gap: 20px;
+        }
+
+        .socials a {
+            display: inline-block;
+        }
+
+        .socials img {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+        }
+
+        /* Responsive adjustments */
+        @media screen and (max-width: 768px) {
+            .navigation {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .grid-container {
+                grid-template-columns: 1fr;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .footer-container {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .coc-contact, .bq-copyright, .socials {
+                text-align: center;
+                margin-bottom: 20px;
+            }
+            
+            .socials {
+                justify-content: center;
+            }
         }
     </style>
 </head>
 <body>
     <header>
         <div class="header-content">
-            <img src="images/chamber.jpg" alt="Gweru Chamber Logo" width="50">
+            <img src="images/chamber.jpg" alt="Gweru Chamber Logo" width="50" height="50">
             <span class="chamber-title">Gweru Chamber of Commerce</span>
         </div>
         <nav aria-label="Main Navigation">
@@ -135,29 +271,36 @@
     </main>
 
     <footer>
-        <div class="coc-contact">
-            <p class="mcoc-bold">Gweru Chamber of Commerce</p>
-            <p>123 Main Street, Gweru, Zimbabwe</p>
-            <p>+263 77 386 7878</p>
-            <p>chimutapiran@gmail.com</p>
-        </div>
-        <div class="socials">
-            <a href="https://twitter.com/" target="_blank">
-                <img src="images/xlogo.png" alt="Twitter Logo">
-            </a>
-            <a href="https://www.facebook.com/" target="_blank">
-                <img src="images/facebook.svg" alt="Facebook Logo">
-            </a>
-            <a href="https://www.linkedin.com/" target="_blank">
-                <img src="images/linkedin.svg" alt="LinkedIn Logo">
-            </a>
-            <a href="https://telegram.org/" target="_blank">
-                <img src="images/telegram.jpg" alt="Telegram Logo">
-            </a>
-        </div>
-        <div class="bq-copyright">
-            <p>&copy; <span id="currentyear"></span> Nyasha Chimutapira, WDD 231</p>
-            <p id="lastModified"></p>
+        <div class="footer-container">
+            <!-- Left side: Address -->
+            <div class="coc-contact">
+                <p class="mcoc-bold">Gweru Chamber of Commerce</p>
+                <p>123 Main Street, Gweru, Zimbabwe</p>
+                <p>+263 77 386 7878</p>
+                <p>chimutapiran@gmail.com</p>
+            </div>
+            
+            <!-- Center: Copyright -->
+            <div class="bq-copyright">
+                <p>&copy; <span id="currentyear"></span> Nyasha Chimutapira, WDD 231</p>
+                <p id="lastModified"></p>
+            </div>
+            
+            <!-- Right side: Social icons -->
+            <div class="socials">
+                <a href="https://twitter.com/" target="_blank">
+                    <img src="images/xlogo.png" alt="Twitter Logo" width="30" height="30">
+                </a>
+                <a href="https://www.facebook.com/" target="_blank">
+                    <img src="images/facebook.svg" alt="Facebook Logo" width="30" height="30">
+                </a>
+                <a href="https://www.linkedin.com/" target="_blank">
+                    <img src="images/linkedin.svg" alt="LinkedIn Logo" width="30" height="30">
+                </a>
+                <a href="https://telegram.org/" target="_blank">
+                    <img src="images/telegram.jpg" alt="Telegram Logo" width="30" height="30">
+                </a>
+            </div>
         </div>
     </footer>
 
@@ -165,7 +308,72 @@
         document.addEventListener('DOMContentLoaded', () => {
             const gridContainer = document.querySelector('.grid-container');
             const visitorMessage = document.getElementById('visitor-message');
+            
+            // Set the last modified date
+            document.getElementById('lastModified').textContent = `Last Modified: ${document.lastModified}`;
+            
+            // Set current year
+            document.getElementById('currentyear').textContent = new Date().getFullYear();
 
+            // Sample data if fetch fails
+            const fallbackData = [
+                {
+                    name: "Antelope Park",
+                    image: "images/antelope-park.jpg",
+                    address: "10km from Gweru City Center",
+                    description: "A wildlife conservation park where you can walk with lions and enjoy safari experiences."
+                },
+                {
+                    name: "Midlands Museum",
+                    image: "images/midlands-museum.jpg",
+                    address: "5th Street, Gweru CBD",
+                    description: "Explore the rich history and cultural heritage of the Midlands Province."
+                },
+                {
+                    name: "Gweru River",
+                    image: "images/gweru-river.jpg",
+                    address: "Runs through the city",
+                    description: "The main river that flows through Gweru, offering scenic views and recreational spots."
+                },
+                {
+                    name: "Boggie Clock Tower",
+                    image: "images/clock-tower.jpg",
+                    address: "Main Street, Gweru CBD",
+                    description: "A historic landmark in the center of Gweru city, built during the colonial era."
+                },
+                {
+                    name: "Senuko Shopping Center",
+                    image: "images/senuko-mall.jpg",
+                    address: "Mkoba 6, Gweru",
+                    description: "A modern shopping center with various retail stores, restaurants, and entertainment options."
+                },
+                {
+                    name: "Midlands State University",
+                    image: "images/msu-campus.jpg",
+                    address: "Senga Road, Gweru",
+                    description: "One of Zimbabwe's premier universities with beautiful campus grounds and architecture."
+                }
+            ];
+
+            // Function to create cards
+            function createCards(data) {
+                data.forEach(item => {
+                    const card = document.createElement('div');
+                    card.classList.add('card');
+                    card.innerHTML = `
+                        <h2>${item.name}</h2>
+                        <figure>
+                            <img src="${item.image}" alt="${item.name}" loading="lazy" width="300" height="200">
+                            <figcaption>${item.address}</figcaption>
+                        </figure>
+                        <p>${item.description}</p>
+                        <button>Learn More</button>
+                    `;
+                    gridContainer.appendChild(card);
+                });
+            }
+
+            // Try to fetch data, use fallback if it fails
             fetch('data/data.json')
                 .then(response => {
                     if (!response.ok) {
@@ -174,25 +382,14 @@
                     return response.json();
                 })
                 .then(data => {
-                    data.forEach(item => {
-                        const card = document.createElement('div');
-                        card.classList.add('card');
-                        card.innerHTML = `
-                            <h2>${item.name}</h2>
-                            <figure>
-                                <img src="${item.image}" alt="${item.name}">
-                                <figcaption>${item.address}</figcaption>
-                            </figure>
-                            <p>${item.description}</p>
-                            <button>Learn More</button>
-                        `;
-                        gridContainer.appendChild(card);
-                    });
+                    createCards(data);
                 })
                 .catch(error => {
                     console.error('Error fetching data:', error);
+                    createCards(fallbackData);
                 });
 
+            // Visitor message logic
             const lastVisit = localStorage.getItem('lastVisit');
             const currentTime = Date.now();
             const oneDay = 24 * 60 * 60 * 1000;
@@ -201,12 +398,12 @@
                 visitorMessage.textContent = "Welcome! Let us know if you have any questions.";
             } else {
                 const daysSinceLastVisit = Math.floor((currentTime - lastVisit) / oneDay);
-                visitorMessage.textContent = daysSinceLastVisit < 1 ? "Back so soon! Awesome!" : `You last visited ${daysSinceLastVisit} day${daysSinceLastVisit > 1 ? 's' : ''} ago.`;
+                visitorMessage.textContent = daysSinceLastVisit < 1 ? 
+                    "Back so soon! Awesome!" : 
+                    `You last visited ${daysSinceLastVisit} day${daysSinceLastVisit > 1 ? 's' : ''} ago.`;
             }
             localStorage.setItem('lastVisit', currentTime);
         });
-
-        document.getElementById('currentyear').textContent = new Date().getFullYear();
     </script>
 </body>
 </html>
