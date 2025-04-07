@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Site Plan - Bishop Wilderness Explorers</title>
+    <style>
+        /* Color Schema */
+        :root {
+            --primary-color: #1C3F94; /* Dark Blue */
+            --secondary-color: #F5F5F5; /* Light Gray */
+            --text-color: #333333; /* Dark gray - Main text */
+            --accent-color: #FFB74D; /* Light Orange - Call to action elements */
+            --light-color: #FFFFFF; /* White - Cards and highlights */
+            --dark-accent: #4A4A4A; /* Dark Gray - Navigation and footers */
+        }
+
+        /* Typography */
+        body {
+            font-family: 'Roboto', sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--secondary-color);
+            margin: 0;
+            padding: 0;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Nunito', sans-serif;
+            color: var(--primary-color);
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            text-align: center;
+            padding: 1.5rem;
+            background-color: var(--primary-color);
+            color: var(--light-color);
+            margin-top: 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        h2 {
+            font-size: 1.8rem;
+            border-bottom: 3px solid var(--primary-color);
+            padding-bottom: 0.5rem;
+            margin-top: 2rem;
+        }
+
+        h3 {
+            font-size: 1.3rem;
+            color: var(--dark-accent);
+        }
+
+        /* Layout */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem;
+        }
+
+        section {
+            background-color: var(--light-color);
+            margin-bottom: 2rem;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        /* Color Schema Display */
+        .color-palette {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin: 1rem 0;
+            justify-content: center;
+        }
+
+        .color-swatch {
+            width: 150px;
+            height: 100px;
+            border-radius: 5px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            text-align: center;
+            padding: 0.5rem;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .primary {
+            background-color: var(--primary-color);
+        }
+
+        .secondary {
+            background-color: var(--secondary-color);
+            color: var(--text-color);
+        }
+
+        .text {
+            background-color: var(--text-color);
+        }
+
+        .accent {
+            background-color: var(--accent-color);
+        }
+
+        .light {
+            background-color: var(--light-color);
+            color: var(--text-color);
+            border: 1px solid #ddd;
+        }
+
+        .dark-accent {
+            background-color: var(--dark-accent);
+        }
+
+        /* Typography Display */
+        .font-example {
+            margin: 1.5rem 0;
+            padding: 1rem;
+            border-left: 4px solid var(--primary-color);
+            background-color: rgba(28, 63, 148, 0.05);
+        }
+
+        .nunito {
+            font-family: 'Nunito', sans-serif;
+        }
+
+        .roboto {
+            font-family: 'Roboto', sans-serif;
+        }
+
+        .merriweather {
+            font-family: 'Merriweather', serif;
+        }
+
+        /* Site Map */
+        .sitemap {
+            margin: 2rem 0;
+        }
+
+        .sitemap-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .sitemap-main {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 1rem;
+            border-radius: 5px;
+            text-align: center;
+            margin-bottom: 1rem;
+            width: 200px;
+        }
+
+        .sitemap-branches {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1rem;
+        }
+
+        .sitemap-page {
+            background-color: var(--dark-accent);
+            color: white;
+            padding: 0.8rem;
+            border-radius: 5px;
+            text-align: center;
+            width: 150px;
+            transition: transform 0.2s;
+        }
+
+        .sitemap-page:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .sitemap-lines {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+
+        .vertical-line {
+            width: 2px;
+            height: 20px;
+            background-color: var(--primary-color);
+        }
+
+        .horizontal-line {
+            width: 80%;
+            height: 2px;
+            background-color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+
+        /* Page Descriptions */
+        .page-description {
+            background-color: rgba(28, 63, 148, 0.05);
+            padding: 1rem;
+            border-radius: 5px;
+            margin-bottom: 1rem;
+        }
+
+        /* Wireframes */
+        .wireframes {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            justify-content: center;
+        }
+
+        .wireframe {
+            border: 2px solid var(--primary-color);
+            border-radius: 8px;
+            padding: 1rem;
+            max-width: 100%;
+            background-color: #f8f8f8;
+        }
+
+        .wireframe-title {
+            text-align: center;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        .wireframe img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+        }
+
+        .wireframe-mobile {
+            width: 300px;
+        }
+
+        .wireframe-desktop {
+            width: 600px;
+        }
+
+        /* ASCII Wireframes */
+        .ascii-wireframe {
+            font-family: monospace;
+            white-space: pre;
+            line-height: 1.2;
+            background-color: #f8f8f8;
+            padding: 1rem;
+            border-radius: 5px;
+            overflow-x: auto;
+            font-size: 0.8rem;
+        }
+
+        /* Responsive design */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+            
+            h2 {
+                font-size: 1.5rem;
+            }
+            
+            .wireframes {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .wireframe-desktop {
+                width: 100%;
+            }
+
+            .color-swatch {
+                width: 120px;
+                height: 80px;
+            }
+        }
+
+        /* Logo */
+        .logo-container {
+            display: flex;
+            justify-content: center;
+            margin: 2rem 0;
+        }
+
+        .logo {
+            background-color: var(--primary-color);
+            color: white;
+            width: 150px;
+            height: 150px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            position: relative;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+
+        .logo-text {
+            font-family: 'Nunito', sans-serif;
+            font-weight: bold;
+            font-size: 1.2rem;
+            text-align: center;
+            line-height: 1.2;
+        }
+
+        .logo-mountain {
+            position: absolute;
+            bottom: 30px;
+            width: 80px;
+            height: 40px;
+            overflow: hidden;
+        }
+
+        .mountain {
+            width: 0;
+            height: 0;
+            border-left: 40px solid transparent;
+            border-right: 40px solid transparent;
+            border-bottom: 40px solid var(--light-color);
+        }
+
+        .mountain-small {
+            position: absolute;
+            left: 15px;
+            bottom: 0;
+            width: 0;
+            height: 0;
+            border-left: 25px solid transparent;
+            border-right: 25px solid transparent;
+            border-bottom: 30px solid var(--accent-color);
+        }
+    </style>
+</head>
+<body>
+    <h1>Site Plan: Bishop Wilderness Explorers</h1>
+    
+    <div class="container">
+        <section id="site-name">
+            <h2>Site Name</h2>
+            <div class="logo-container">
+                <div class="logo">
+                    <div class="logo-text">BISHOP<br>WILDERNESS<br>EXPLORERS</div>
+                    <div class="logo-mountain">
+                        <div class="mountain"></div>
+                        <div class="mountain-small"></div>
+                    </div>
+                </div>
+            </div>
+            <p><strong>Bishop Wilderness Explorers</strong></p>
+            <p>This name was selected to evoke the sense of adventure and exploration in the wilderness around Bishop. It emphasizes the thrill of discovering nature, while "Explorers" denotes a sense of community and shared experiences among outdoor enthusiasts. The name is memorable, easy to pronounce, and clearly communicates the company's focus on wilderness exploration.</p>
+        </section>
+
+        <section id="site-purpose">
+            <h2>Site Purpose</h2>
+            <p>Bishop Wilderness Explorers serves as a comprehensive resource for outdoor enthusiasts of all skill levels. The website aims to:</p>
+            <ul>
+                <li>Showcase a variety of hiking trails with detailed information about difficulty, length, elevation, and features</li>
+                <li>Promote organized hiking events and group excursions for community building</li>
+                <li>Provide educational content about hiking safety, equipment, and environmental conservation</li>
+                <li>Offer membership options with exclusive benefits for regular hikers</li>
+                <li>Build a community of outdoor enthusiasts who can share experiences and connect with each other</li>
+                <li>Serve as a trusted source of information for both beginners and experienced explorers</li>
+            </ul>
+            <p>The website will be designed to inspire visitors to explore the outdoors while providing them with the knowledge and resources they need to do so safely and responsibly.</p>
+        </section>
+
+        <section id="scenarios">
+            <h2>Scenarios</h2>
+            <h3>Scenario 1:</h3>
+            <p>"I'm new to hiking and want to find beginner-friendly trails in my area. What trails would you recommend for someone just starting out?"</p>
+            
+            <h3>Scenario 2:</h3>
+            <p>"I'm planning a hiking trip next month and want to join a guided group. What upcoming events do you have scheduled?"</p>
+            
+            <h3>Scenario 3:</h3>
+            <p>"What essential safety equipment should I bring on a day hike in mountainous terrain?"</p>
+            
+            <h3>Scenario 4:</h3>
+            <p>"I'm an experienced hiker looking to challenge myself. What are your most difficult trails with the best views?"</p>
+            
+            <h3>Scenario 5:</h3>
+            <p>"What benefits do I get with a premium membership, and how does it compare to the basic membership?"</p>
+        </section>
+
+        <section id="site-map">
+            <h2>Site Map</h2>
+            <div class="sitemap">
+                <div class="sitemap-container">
+                    <div class="sitemap-main">Home</div>
+                    <div class="sitemap-lines">
+                        <div class="vertical-line"></div>
+                        <div class="horizontal-line"></div>
+                    </div>
+                    <div class="sitemap-branches">
+                        <div class="sitemap-page">About Us</div>
+                        <div class="sitemap-page">Trails</div>
+                        <div class="sitemap-page">Events</div>
+                        <div class="sitemap-page">Membership</div>
+                        <div class="sitemap-page">Safety Tips</div>
+                        <div class="sitemap-page">Contact</div>
+                    </div>
+                </div>
+            </div>
+            
+            <h3>Page Descriptions:</h3>
+            
+            <div class="page-description">
+                <h4>Home Page</h4>
+                <p>The landing page will feature stunning imagery of wilderness destinations, a brief introduction to Bishop Wilderness Explorers, featured trails and upcoming events, testimonials from members, and clear navigation to all other sections of the site.</p>
+            </div>
+            
+            <div class="page-description">
+                <h4>About Us</h4>
+                <p>This page will tell the story of Bishop Wilderness Explorers, including its mission, vision, and values. It will introduce the team of experienced guides and outdoor experts and highlight the company's commitment to safety and environmental stewardship.</p>
+            </div>
+            
+            <div class="page-description">
+                <h4>Trails</h4>
+                <p>A comprehensive database of hiking trails, searchable by location, difficulty, length, and features. Each trail will have detailed information including maps, elevation profiles, photos, and user reviews.</p>
+            </div>
+            
+            <div class="page-description">
+                <h4>Events</h4>
+                <p>A calendar of upcoming guided hikes, workshops, and community events. Users can filter by date, location, and type of event, and register directly through the site.</p>
+            </div>
+            
+            <div class="page-description">
+                <h4>Membership</h4>
+                <p>Information about different membership tiers, benefits, and pricing. This page will include a sign-up form and testimonials from current members about the value of membership.</p>
+            </div>
+            
+            <div class="page-description">
+                <h4>Safety Tips</h4>
+                <p>Educational content about hiking safety, including articles on proper equipment, weather preparedness, wildlife encounters, first aid, and leave-no-trace principles.</p>
+            </div>
+            
+            <div class="page-description">
+                <h4>Contact</h4>
+                <p>Contact information for Bishop Wilderness Explorers, including a contact form, physical address, phone number, email, and social media links. Also includes an FAQ section for common inquiries.</p>
+            </div>
+        </section>
+
+        <section id="color-schema">
+            <h2>Color Schema</h2>
+            <p>The color palette reflects the natural environment of hiking trails while ensuring good readability and visual appeal:</p>
+            
+            <div class="color-palette">
+                <div class="color-swatch primary">
+                    <p>#1C3F94</p>
+                    <p>Dark Blue</p>
+                    <p>Primary Brand</p>
+                </div>
+                <div class="color-swatch secondary">
+                    <p>#F5F5F5</p>
+                    <p>Light Gray</p>
+                    <p>Background</p>
+                </div>
+                <div class="color-swatch text">
+                    <p>#333333</p>
+                    <p>Dark Gray</p>
+                    <p>Main Text</p>
+                </div>
+                <div class="color-swatch accent">
+                    <p>#FFB74D</p>
+                    <p>Light Orange</p>
+                    <p>Call to Action</p>
+                </div>
+                <div class="color-swatch dark-accent">
+                    <p>#4A4A4A</p>
+                    <p>Dark Gray</p>
+                    <p>Navigation/Footer</p>
+                </div>
+                <div class="color-swatch light">
+                    <p>#FFFFFF</p>
+                    <p>White</p>
+                    <p>Cards & Content</p>
+                </div>
+            </div>
+            
+            <h3>Color Usage:</h3>
+            <ul>
+                <li><strong>Primary Color (Dark Blue):</strong> Main branding, headers, and important UI elements - represents trust and adventure.</li>
+                <li><strong>Secondary Color (Light Gray):</strong> Page backgrounds and subtle accents - provides a clean, modern backdrop.</li>
+                <li><strong>Text Color (Dark Gray):</strong> Main body text for optimal readability.</li>
+                <li><strong>Accent Color (Light Orange):</strong> Call-to-action buttons, highlights, and interactive elements - creates visual interest and draws attention.</li>
+                <li><strong>Dark Accent (Dark Gray):</strong> Navigation bars, footers, and secondary buttons - provides contrast and depth.</li>
+                <li><strong>Light Color (White):</strong> Content cards, form backgrounds, and to create visual separation.</li>
+            </ul>
+        </section>
+
+        <section id="typography">
+            <h2>Typography</h2>
+            <p>The typography selection balances readability with a modern, adventurous feel that aligns with the wilderness exploration theme:</p>
+            
+            <div class="font-example nunito">
+                <h3>Nunito</h3>
+                <p>Used for all headings (h1, h2, h3)</p>
+                <p style="font-size: 1.5rem;">The quick brown fox jumps over the lazy dog.</p>
+                <p style="font-weight: bold;">ABCDEFGHIJKLMNOPQRSTUVWXYZ</p>
+                <p style="font-weight: bold;">abcdefghijklmnopqrstuvwxyz</p>
+                <p style="font-weight: bold;">1234567890</p>
+            </div>
+            
+            <div class="font-example roboto">
+                <h3>Roboto</h3>
+                <p>Used for body text, navigation, and general content</p>
+                <p style="font-size: 1rem;">The quick brown fox jumps over the lazy dog.</p>
+                <p>ABCDEFGHIJKLMNOPQRSTUVWXYZ</p>
+                <p>abcdefghijklmnopqrstuvwxyz</p>
+                <p>1234567890</p>
+            </div
