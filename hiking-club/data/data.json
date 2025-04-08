@@ -3,6 +3,17 @@
         { "title": "Sunny Ridge Trail", "description": "A beautiful trail with stunning views." },
         { "title": "Mountain Peak Trail", "description": "A challenging hike to the peak." },
         { "title": "Forest Walk", "description": "A serene walk through the forest." },
-        { "title": "Lake View Trail", "description": "A scenic trail around the lake." }
+        { "title": "Lake View Trail", "description": "A scenic trail around the lake." },
+        { "title": "Desert Oasis Trail", "description": "Explore a hidden oasis in the desert." },
+        { "title": "Riverside Path", "description": "A gentle trail following the riverbanks." },
+        { "title": "Wildflower Loop", "description": "A colorful loop filled with blooming wildflowers." },
+        { "title": "Canyon Adventure", "description": "A thrilling hike through steep canyon walls." },
+        { "title": "Hilltop Vista", "description": "Enjoy panoramic views from the hilltop." },
+        { "title": "Nature's Bridge", "description": "A picturesque trail featuring a natural bridge." },
+        { "title": "Old Growth Forest", "description": "Walk among ancient trees in a protected forest." },
+        { "title": "Beachside Trail", "description": "A relaxing walk along the sandy beaches." },
+        { "title": "Cave Explorers Trail", "description": "Discover fascinating caves and rock formations." },
+        { "title": "Sunset Overlook Trail", "description": "Catch breathtaking sunsets at the overlook." },
+        { "title": "Wildlife Sanctuary Trail", "description": "Spot diverse wildlife along this tranquil trail." }
     ]
 }
