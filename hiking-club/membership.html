@@ -3,197 +3,200 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Membership Information">
     <title>Membership - Bishop Wilderness Explorers</title>
+    <link rel="icon" href="images/favicon.png" type="image/x-icon"> <!-- Favicon -->
     <style>
+        /* Color Schema */
+        :root {
+            --primary-color: #1C3F94; /* Dark Blue */
+            --secondary-color: #F5F5F5; /* Light Gray */
+            --text-color: #333333; /* Dark gray - Main text */
+            --accent-color: #FFB74D; /* Light Orange - Call to action elements */
+            --light-color: #FFFFFF; /* White - Cards and highlights */
+            --dark-accent: #4A4A4A; /* Dark Gray - Navigation and footers */
+        }
+
+        /* Background Image */
         body {
-            font-family: 'Sunflower', sans-serif;
+            background-image: url('images/hiking1.jpg'); /* Background image */
+            background-size: cover;
+            background-position: center;
+            font-family: 'Roboto', sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
             margin: 0;
             padding: 0;
-            background-image: url('images/hiking7.jpg'); /* Replace with your background image */
-            background-size: cover; /* Cover the entire background */
-            background-position: center; /* Center the background */
-            color: #f4f4f4; /* Light text color */
         }
 
-        header {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 1rem 2rem;
-            background-color: rgba(59, 59, 59, 0.8); /* Darker transparent background for header */
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Subtle shadow */
-        }
-
-        nav {
-            display: flex;
-            gap: 15px; /* Space between nav links */
-        }
-
-        nav a {
-            color: #f4f4f4; /* Light text color */
-            text-decoration: none;
-            padding: 10px;
-            transition: background-color 0.3s ease; /* Smooth transition */
-        }
-
-        nav a:hover {
-            background-color: #ffcc00; /* Bright highlight on hover */
-            color: #333; /* Dark text on hover */
-        }
-
-        main {
-            padding: 2rem;
-            max-width: 800px; /* Max width for main content */
-            margin: 2rem auto; /* Center the main section */
-            background-color: rgba(42, 42, 42, 0.8); /* Darker background for main content */
-            border-radius: 8px; /* Rounded corners */
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Shadow for depth */
+        h1, h2 {
+            color: var(--primary-color);
         }
 
         h1 {
-            margin-bottom: 1rem; /* Space below the heading */
-            text-align: center; /* Center align heading */
-            color: #ffcc00; /* Bright color for heading */
+            font-size: 2.5rem;
+            text-align: center;
+            padding: 1.5rem;
+            background-color: var(--primary-color);
+            color: var(--light-color);
+            margin-top: 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
         }
 
-        p {
-            text-align: center; /* Center align paragraph text */
+        h2 {
+            font-size: 1.8rem;
+            margin-top: 2rem;
         }
 
-        form {
-            display: flex;
-            flex-direction: column; /* Stack form elements */
-            gap: 1rem; /* Space between form elements */
+        /* Layout */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem;
         }
 
-        label {
-            font-weight: bold; /* Bold labels */
+        section {
+            background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent background */
+            margin-bottom: 2rem;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
         }
 
-        input {
-            padding: 0.5rem; /* Padding for form inputs */
-            border: 1px solid #ccc; /* Border style */
-            border-radius: 4px; /* Rounded corners */
-            width: 100%; /* Full-width inputs */
-            background-color: #3b3b3b; /* Dark background for inputs */
-            color: #f4f4f4; /* Light text color for inputs */
+        nav {
+            text-align: center;
+            margin-bottom: 2rem;
         }
 
-        button {
-            background-color: #ffcc00; /* Bright button color */
-            color: #333; /* Dark button text */
-            border: none; /* Remove border */
-            padding: 0.5rem; /* Padding for button */
-            border-radius: 4px; /* Rounded corners */
-            cursor: pointer; /* Pointer cursor on hover */
-        }
-
-        button:hover {
-            background-color: #e6b800; /* Darker yellow on hover */
+        nav a {
+            color: var(--primary-color);
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
         }
 
         footer {
             display: flex;
-            justify-content: space-between; /* Space between address and social links */
-            align-items: center; /* Center align items vertically */
-            background-color: rgba(59, 59, 59, 0.8); /* Darker transparent background for footer */
-            color: #f4f4f4;
-            padding: 1rem 2rem; /* Padding for footer */
+            justify-content: space-between;
+            align-items: center;
+            background-color: var(--primary-color);
+            color: white;
+            padding: 1rem 2rem;
         }
 
         .footer-left {
-            text-align: left; /* Align text to the left */
+            text-align: left;
         }
 
         .footer-center {
-            text-align: center; /* Center text for copyright */
-            flex-grow: 1; /* Allow center to take available space */
-        }
-
-        .socials img {
-            max-width: 30px; /* Social icon size */
-            margin: 0 5px; /* Space between icons */
+            text-align: center;
+            flex-grow: 1;
         }
 
         .socials {
-            display: flex; /* Flexbox for social icons */
-            justify-content: flex-end; /* Align social icons to the right */
+            display: flex;
+            justify-content: flex-end;
         }
 
-        /* Responsive styles */
-        @media (max-width: 600px) {
-            nav {
-                flex-direction: column; /* Stack nav links on small screens */
+        .socials img {
+            max-width: 30px;
+            margin: 0 5px;
+        }
+
+        /* Call to Action */
+        .call-to-action {
+            background-color: var(--accent-color);
+            color: white;
+            padding: 2rem;
+            text-align: center;
+            border-radius: 8px;
+            margin-bottom: 2rem;
+        }
+
+        /* Testimonials */
+        .testimonials {
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .testimonial {
+            margin-bottom: 1rem;
+        }
+
+        /* Responsive design */
+        @media (max-width: 768px) {
+            h1 { font-size: 2rem; }
+            h2 { font-size: 1.5rem; }
+            footer {
+                flex-direction: column;
                 align-items: flex-start;
             }
-
-            footer {
-                flex-direction: column; /* Stack footer items on small screens */
-                align-items: flex-start; /* Align items to the left */
+            .socials {
+                justify-content: flex-start;
+                margin-top: 1rem;
             }
         }
     </style>
 </head>
 <body>
-    <header>
-        <nav>
-            <a href="index.html">Home</a>
-            <a href="trails.html">Trails</a>
-            <a href="events.html">Events</a>
-            <a href="membership.html">Membership</a>
-            <a href="safety-tips.html">Safety Tips</a>
-            <a href="contact.html">Contact</a>
-            <a href="about.html">About Us</a>
-        </nav>
-    </header>
-    <main>
-        <h1>Become a Member</h1>
-        <p>Join our hiking club to enjoy exclusive events and benefits!</p>
-        <p>As a member, you will receive:</p>
-        <ul>
-            <li>Access to exclusive hiking trails</li>
-            <li>Invitations to members-only events</li>
-            <li>Discounts on gear and merchandise</li>
-            <li>Monthly newsletters with hiking tips and updates</li>
-        </ul>
-        
-        <h2>Membership Fees</h2>
-        <p>Annual membership fee: <strong>$50</strong></p>
-        <p>Your membership helps us maintain trails and organize events!</p>
+    <h1>
+        <img src="images/hiking logo.jpg" alt="Bishop Wilderness Explorers Logo" style="max-width: 150px; display: block; margin: 0 auto;">
+        Membership
+    </h1>
 
-        <h2>How to Pay</h2>
-        <p>You can pay your membership fee via:</p>
-        <ul>
-            <li>Bank Transfer</li>
-            <li>PayPal</li>
-            <li>In-person at our events</li>
-        </ul>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="about.html">About Us</a>
+        <a href="trails.html">Trails</a>
+        <a href="events.html">Events</a>
+        <a href="contact.html">Contact</a>
+        <a href="safety-tips.html">Safety Tips</a>
+    </nav>
 
-        <h2>Frequently Asked Questions</h2>
-        <p><strong>1. How do I renew my membership?</strong><br>Renewals can be done online or at any of our events.</p>
-        <p><strong>2. Can I bring a friend on hikes?</strong><br>Yes! Members can bring guests, but they must sign a waiver.</p>
-        
-        <form id="membership-form">
-            <label for="name">Name:</label>
-            <input type="text" id="name" name="name" required>
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required>
-            <button type="submit">Join</button>
-        </form>
-    </main>
+    <div class="container">
+        <section id="membership">
+            <h2>Become a Member</h2>
+            <p>Join Bishop Wilderness Explorers and enjoy exclusive benefits, including:</p>
+            <ul>
+                <li>Discounts on events and workshops</li>
+                <li>Access to members-only trails and resources</li>
+                <li>Monthly newsletters with updates and tips</li>
+                <li>Opportunities to participate in community events</li>
+            </ul>
+            <p>Sign up today and start your adventure with us!</p>
+        </section>
+
+        <div class="call-to-action">
+            <h2>Ready to Explore?</h2>
+            <p>Join us today and become part of a community that loves the outdoors as much as you do!</p>
+            <a href="membership.html" style="color: white; font-weight: bold; text-decoration: underline;">Sign Up Now</a>
+        </div>
+
+        <div class="testimonials">
+            <h2>What Our Members Say</h2>
+            <div class="testimonial">
+                <p><strong>Abel Chivanga:</strong> "Joining Bishop Wilderness Explorers has been one of the best decisions I have made! The trails are beautiful and the community is welcoming."</p>
+            </div>
+            <div class="testimonial">
+                <p><strong>Faith Magomo:</strong> "I love the workshops and events! I have learned so much about nature and photography."</p>
+            </div>
+            <div class="testimonial">
+                <p><strong>Dalington Mafa:</strong> "The membership offers great discounts, and Ihave met amazing people along the way!"</p>
+            </div>
+        </div>
+    </div>
+
     <footer>
         <div class="footer-left">
-            <p class="mcoc-bold">Bishop Wilderness Explorers</p>
+            <p><strong>Bishop Wilderness Explorers</strong></p>
             <p>123 Main Street, Gweru, Zimbabwe</p>
             <p>+263 77 386 7878</p>
-            <p>chimutapiran@gmail.com</p>
+            <p>Email: chimutapiran@gmail.com</p>
         </div>
         <div class="footer-center">
-            <div class="bq-copyright">
-                <p>&copy; <span id="currentyear"></span> Nyasha Chimutapira, WDD 231</p>
-                <p id="lastModified"></p>
-            </div>
+            <p>&copy; <span id="currentyear"></span> Nyasha Chimutapira, WDD 231</p>
+            <p id="lastModified"></p>
         </div>
         <div class="socials">
             <a href="https://twitter.com/" target="_blank">
@@ -210,6 +213,7 @@
             </a>
         </div>
     </footer>
+    
     <script type="module">
         document.getElementById('currentyear').textContent = new Date().getFullYear();
         document.getElementById('lastModified').textContent = 'Last modified: ' + document.lastModified;

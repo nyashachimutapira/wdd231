@@ -3,95 +3,100 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="About Bishop Wilderness Explorers">
-    <title>About Us - Bishop Wilderness Explorers</title>
+    <title>Events - Bishop Wilderness Explorers</title>
+    <link rel="icon" href="images/favicon.png" type="image/x-icon"> <!-- Favicon -->
     <style>
+        /* Color Schema */
+        :root {
+            --primary-color: #1C3F94; /* Dark Blue */
+            --secondary-color: #F5F5F5; /* Light Gray */
+            --text-color: #333333; /* Dark gray - Main text */
+            --accent-color: #FFB74D; /* Light Orange - Call to action elements */
+            --light-color: #FFFFFF; /* White - Cards and highlights */
+            --dark-accent: #4A4A4A; /* Dark Gray - Navigation and footers */
+        }
+
+        /* Background Image */
         body {
-            font-family: 'Sunflower', sans-serif;
-            margin: 0;
-            padding: 0;
-            background-image: url('images/hiking background.jpg');
+            background-image: url('images/hiking7.jpg'); /* Background image */
             background-size: cover;
             background-position: center;
-            color: #f4f4f4;
-        }
-
-        header {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 1rem 2rem;
-            background-color: rgba(0, 0, 0, 0.7);
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-        }
-
-        .logo img {
-            max-width: 150px;
-            height: auto;
-        }
-
-        nav {
-            display: flex;
-            gap: 20px;
-        }
-
-        nav a {
-            color: #f4f4f4;
-            text-decoration: none;
-            padding: 10px 15px;
-            border-radius: 5px;
-            transition: background-color 0.3s ease;
-        }
-
-        nav a:hover {
-            background-color: #ffcc00;
-            color: #333;
-        }
-
-        main {
-            padding: 3rem 2rem;
-            text-align: center;
-            background-color: rgba(42, 42, 42, 0.8);
-            border-radius: 8px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-            margin: 2rem auto;
-            max-width: 800px;
+            color: var(--text-color);
+            margin: 0;
+            padding: 0;
+            font-family: 'Roboto', sans-serif;
         }
 
         h1, h2 {
-            color: #ffcc00;
+            color: var(--primary-color);
         }
 
-        .team {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
+        h1 {
+            font-size: 2.5rem;
+            text-align: center;
+            padding: 1.5rem;
+            background-color: var(--primary-color);
+            color: var(--light-color);
+            margin-top: 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        main {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem;
+            background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent background */
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .event {
+            margin-bottom: 2rem;
+            padding: 1rem;
+            border: 1px solid var(--dark-accent);
+            border-radius: 8px;
+            background-color: var(--light-color);
+        }
+
+        .team-section {
             margin-top: 2rem;
+            padding: 1rem;
+            background-color: var(--light-color);
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
         }
 
         .team-member {
-            background-color: #4a4a4a;
-            border-radius: 8px;
-            padding: 1rem;
-            margin: 1rem;
-            flex: 1 1 200px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
-            text-align: center;
+            display: flex;
+            align-items: center;
+            margin-bottom: 1rem;
         }
 
         .team-member img {
             border-radius: 50%;
-            width: 100px;
-            height: 100px;
-            object-fit: cover;
+            width: 80px;
+            height: 80px;
+            margin-right: 15px;
+        }
+
+        nav {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        nav a {
+            color: var(--primary-color);
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
         }
 
         footer {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            background-color: rgba(0, 0, 0, 0.7);
-            color: #f4f4f4;
+            background-color: var(--primary-color);
+            color: white;
             padding: 1rem 2rem;
         }
 
@@ -104,101 +109,110 @@
             flex-grow: 1;
         }
 
-        .socials img {
-            max-width: 30px;
-            margin: 0 5px;
-        }
-
         .socials {
             display: flex;
             justify-content: flex-end;
         }
 
-        @media (max-width: 600px) {
-            nav {
-                flex-direction: column;
-                align-items: flex-start;
-            }
+        .socials img {
+            max-width: 30px;
+            margin: 0 5px;
+        }
 
+        /* Responsive design */
+        @media (max-width: 768px) {
+            h1 { font-size: 2rem; }
             footer {
                 flex-direction: column;
                 align-items: flex-start;
             }
-
-            .team {
-                flex-direction: column;
-                align-items: center;
+            .socials {
+                justify-content: flex-start;
+                margin-top: 1rem;
             }
         }
     </style>
-    <link rel="icon" href="images/favicon.jpg" type="image/x-icon">
 </head>
 <body>
-    <header>
-        <div class="logo">
-            <img src="images/hiking logo.jpg" alt="Bishop Wilderness Explorers Logo" id="company-logo">
-        </div>
-        <nav>
-            <a href="index.html">Home</a>
-            <a href="trails.html">Trails</a>
-            <a href="events.html">Events</a>
-            <a href="membership.html">Membership</a>
-            <a href="safety-tips.html">Safety Tips</a>
-            <a href="about.html">About Us</a>
-            <a href="contact.html">Contact</a>
-        </nav>
-    </header>
+    <h1>
+        <img src="images/hiking logo.jpg" alt="Bishop Wilderness Explorers Logo" style="max-width: 150px; display: block; margin: 0 auto;">
+        Upcoming Events
+    </h1>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="about.html">About Us</a>
+        <a href="trails.html">Trails</a>
+        <a href="membership.html">Membership</a>
+        <a href="safety-tips.html">Safety Tips</a>
+        <a href="contact.html">Contact</a>
+    </nav>
 
     <main>
-        <h1>About Bishop Wilderness Explorers</h1>
-        <p>At Bishop Wilderness Explorers, we are passionate about connecting people with nature through hiking and outdoor adventures. Our mission is to provide safe, enjoyable, and educational hiking experiences for everyone.</p>
-        
-        <h2>Our Mission</h2>
-        <p>To inspire a love for the outdoors, promote environmental stewardship, and facilitate community through hiking.</p>
-        
-        <h2>Our Values</h2>
-        <ul>
-            <li><strong>Community:</strong> We believe in building a supportive community of hiking enthusiasts.</li>
-            <li><strong>Safety:</strong> We prioritize the safety of our members on all hikes.</li>
-            <li><strong>Respect for Nature:</strong> We are committed to preserving the beauty of our natural environment.</li>
-            <li><strong>Inclusivity:</strong> We welcome adventurers of all ages and skill levels.</li>
-        </ul>
+        <div class="event">
+            <h2>Spring Hiking Festival</h2>
+            <p><strong>Date:</strong> March 20, 2025</p>
+            <p><strong>Location:</strong> Chimanimani Mountains</p>
+            <p>Join us for a day of hiking, nature workshops, and community fun. Suitable for all ages!</p>
+        </div>
 
-        <h2>Meet Our Team</h2>
-        <div class="team">
-            <div class="team-member">
-                <img src="images/donny.jpg" alt="Donald Mafa">
-                <h3>Donald Mafa</h3>
-                <p>Lead Guide</p>
-                <p>Donald is an experienced hiker with a passion for exploring the great outdoors.</p>
-            </div>
+        <div class="event">
+            <h2>Wildlife Photography Workshop</h2>
+            <p><strong>Date:</strong> April 15, 2025</p>
+            <p><strong>Location:</strong> Hwange National Park</p>
+            <p>Learn how to capture stunning wildlife photos with expert photographers. Limited spots available!</p>
+        </div>
+
+        <div class="event">
+            <h2>Matobo Cultural Heritage Tour</h2>
+            <p><strong>Date:</strong> May 10, 2025</p>
+            <p><strong>Location:</strong> Matobo National Park</p>
+            <p>Explore the rich cultural heritage of the Matobo region with guided tours and storytelling sessions.</p>
+        </div>
+
+        <div class="event">
+            <h2>Nyanga Hiking Challenge</h2>
+            <p><strong>Date:</strong> June 5, 2025</p>
+            <p><strong>Location:</strong> Nyanga National Park</p>
+            <p>Test your hiking skills in this challenging trek across the beautiful landscapes of Nyanga.</p>
+        </div>
+
+        <div class="team-section">
+            <h2>Meet Our Team</h2>
             <div class="team-member">
                 <img src="images/Christalia.jpg" alt="Christalia Shumba">
-                <h3>Christalia Shumba</h3>
-                <p>Community Coordinator</p>
-                <p>Christalia loves connecting people with nature and organizing community events.</p>
+                <div>
+                    <strong>Christalia Shumba</strong><br>
+                    Director and Lead Guide
+                </div>
             </div>
             <div class="team-member">
-                <img src="images/mzenda.jpg" alt="Michael Mzenda">
-                <h3>Michael Mzenda</h3>
-                <p>Trail Expert</p>
-                <p>Michael knows the trails like the back of his hand and enjoys sharing his knowledge.</p>
+                <img src="images/donny.jpg" alt="Team Member 2">
+                <div>
+                    <strong>Sarah Moyo</strong><br>
+                    Event Coordinator
+                </div>
+            </div>
+            <div class="team-member">
+                <img src="images/mzenda.jpg" alt="Team Member 3">
+                <div>
+                    <strong>John Dube</strong><br>
+                    Safety Officer
+                </div>
             </div>
         </div>
     </main>
 
     <footer>
         <div class="footer-left">
-            <p class="mcoc-bold">Bishop Wilderness Explorers</p>
+            <p><strong>Bishop Wilderness Explorers</strong></p>
             <p>123 Main Street, Gweru, Zimbabwe</p>
             <p>+263 77 386 7878</p>
-            <p>chimutapiran@gmail.com</p>
+            <p>Email: chimutapiran@gmail.com</p>
         </div>
         <div class="footer-center">
-            <div class="bq-copyright">
-                <p>&copy; <span id="currentyear"></span> Nyasha Chimutapira, WDD 231</p>
-                <p id="lastModified"></p>
-            </div>
+            <p>&copy; <span id="currentyear"></span> Nyasha Chimutapira, WDD 231</p>
+            <p id="lastModified"></p>
         </div>
         <div class="socials">
             <a href="https://twitter.com/" target="_blank">
@@ -215,7 +229,9 @@
             </a>
         </div>
     </footer>
-    <script type="module">
+
+    <script>
+        // Dynamically update year and last modified date
         document.getElementById('currentyear').textContent = new Date().getFullYear();
         document.getElementById('lastModified').textContent = 'Last modified: ' + document.lastModified;
     </script>

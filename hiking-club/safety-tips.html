@@ -1,161 +1,210 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Hiking Safety Tips">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Safety Tips - Bishop Wilderness Explorers</title>
     <style>
+        /* Color Schema */
+        :root {
+            --primary-color: #1C3F94; /* Dark Blue */
+            --secondary-color: #F5F5F5; /* Light Gray */
+            --text-color: #333333; /* Dark gray - Main text */
+            --accent-color: #FFB74D; /* Light Orange - Call to action elements */
+            --light-color: #FFFFFF; /* White - Cards and highlights */
+            --dark-accent: #4A4A4A; /* Dark Gray - Navigation and footers */
+        }
+
+        /* Background Image */
         body {
-            font-family: 'Sunflower', sans-serif;
+            background-image: url('images/hiking1.jpg');
+            background-size: cover;
+            background-position: center;
+            color: var(--text-color);
             margin: 0;
             padding: 0;
-            background-image: url('images/hiking8.jpg'); /* Replace with your background image */
-            background-size: cover; /* Cover the entire background */
-            background-position: center; /* Center the background */
-            color: #f4f4f4; /* Light text color */
+            font-family: 'Roboto', sans-serif;
         }
 
-        header {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 1rem 2rem;
-            background-color: rgba(59, 59, 59, 0.8); /* Darker transparent background for header */
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Subtle shadow */
-        }
-
-        nav {
-            display: flex;
-            gap: 15px; /* Space between nav links */
-        }
-
-        nav a {
-            color: #f4f4f4; /* Light text color */
-            text-decoration: none;
-            padding: 10px;
-            transition: background-color 0.3s ease; /* Smooth transition */
-        }
-
-        nav a:hover {
-            background-color: #ffcc00; /* Bright highlight on hover */
-            color: #333; /* Dark text on hover */
-        }
-
-        main {
-            padding: 2rem;
-            max-width: 800px; /* Max width for main content */
-            margin: 2rem auto; /* Center the main section */
-            background-color: rgba(42, 42, 42, 0.8); /* Darker background for main content */
-            border-radius: 8px; /* Rounded corners */
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Shadow for depth */
+        h1, h2 {
+            color: var(--primary-color);
         }
 
         h1 {
-            margin-bottom: 1rem; /* Space below the heading */
-            text-align: center; /* Center align heading */
-            color: #ffcc00; /* Bright color for heading */
+            font-size: 2.5rem;
+            text-align: center;
+            padding: 1.5rem;
+            background-color: var(--primary-color);
+            color: var(--light-color);
+            margin-top: 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
         }
 
-        p {
-            text-align: center; /* Center align paragraph text */
+        h2 {
+            font-size: 1.8rem;
+            margin-top: 2rem;
         }
 
-        ul {
-            list-style-type: disc; /* Bullet points for list */
-            padding-left: 20px; /* Indentation for list */
+        /* Layout */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem;
+            background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent background */
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        nav {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        nav a {
+            color: var(--primary-color);
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
         }
 
         footer {
             display: flex;
-            justify-content: space-between; /* Space between address and social links */
-            align-items: center; /* Center align items vertically */
-            background-color: rgba(59, 59, 59, 0.8); /* Darker transparent background for footer */
-            color: #f4f4f4;
-            padding: 1rem 2rem; /* Padding for footer */
+            justify-content: space-between;
+            align-items: center;
+            background-color: var(--primary-color);
+            color: white;
+            padding: 1rem 2rem;
         }
 
         .footer-left {
-            text-align: left; /* Align text to the left */
+            text-align: left;
         }
 
         .footer-center {
-            text-align: center; /* Center text for copyright */
-            flex-grow: 1; /* Allow center to take available space */
-        }
-
-        .socials img {
-            max-width: 30px; /* Social icon size */
-            margin: 0 5px; /* Space between icons */
+            text-align: center;
+            flex-grow: 1;
         }
 
         .socials {
-            display: flex; /* Flexbox for social icons */
-            justify-content: flex-end; /* Align social icons to the right */
+            display: flex;
+            justify-content: flex-end;
         }
 
-        /* Responsive styles */
-        @media (max-width: 600px) {
-            nav {
-                flex-direction: column; /* Stack nav links on small screens */
+        .socials img {
+            max-width: 30px;
+            margin: 0 5px;
+        }
+
+        /* New Attractive Sections */
+
+        .call-to-action {
+            background-color: var(--accent-color);
+            color: white;
+            text-align: center;
+            padding: 2rem 1rem;
+            margin: 2rem 0;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+        }
+
+        .call-to-action h2 {
+            margin-bottom: 1rem;
+            font-size: 2rem;
+        }
+
+        .call-to-action a {
+            display: inline-block;
+            margin-top: 1rem;
+            padding: 0.75rem 2rem;
+            background-color: white;
+            color: var(--accent-color);
+            font-weight: bold;
+            border-radius: 25px;
+            text-decoration: none;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        .call-to-action a:hover {
+            background-color: #e6a83b;
+            color: white;
+        }
+
+        .quick-checklist {
+            background-color: var(--secondary-color);
+            border-left: 6px solid var(--accent-color);
+            padding: 1rem 1.5rem;
+            margin-top: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            font-weight: bold;
+            color: var(--dark-accent);
+        }
+
+        /* Responsive design */
+        @media (max-width: 768px) {
+            h1 { font-size: 2rem; }
+            h2 { font-size: 1.5rem; }
+            footer {
+                flex-direction: column;
                 align-items: flex-start;
             }
-
-            footer {
-                flex-direction: column; /* Stack footer items on small screens */
-                align-items: flex-start; /* Align items to the left */
+            .socials {
+                justify-content: flex-start;
+                margin-top: 1rem;
             }
         }
     </style>
 </head>
 <body>
-    <header>
-        <nav>
-            <a href="index.html">Home</a>
-            <a href="trails.html">Trails</a>
-            <a href="events.html">Events</a>
-            <a href="membership.html">Membership</a>
-            <a href="safety-tips.html">Safety Tips</a>
-            <a href="contact.html">Contact</a>
-            <a href="about.html">About</a>
-        </nav>
-    </header>
-    <main>
-        <h1>Hiking Safety Tips</h1>
-        <p>Stay safe on your hikes! Here are some essential tips:</p>
-        <ul>
-            <li>Always tell someone your hiking route.</li>
-            <li>Carry enough water and snacks to stay hydrated and energized.</li>
-            <li>Wear appropriate footwear to prevent injuries.</li>
-            <li>Check the weather before heading out to avoid storms.</li>
-            <li>Stay on marked trails to minimize the risk of getting lost.</li>
-            <li>Pack a first aid kit for minor injuries.</li>
-            <li>Know your limits and choose trails that match your fitness level.</li>
-            <li>Keep your phone charged for emergencies and consider carrying a power bank.</li>
-            <li>Respect wildlife and keep a safe distance.</li>
-            <li>Learn basic navigation skills, including how to use a map and compass.</li>
-        </ul>
-        
-        <h2>Essential Gear for Hiking</h2>
-        <p>Make sure to pack the following items for a safe hiking experience:</p>
-        <ul>
-            <li>Water bottle or hydration system</li>
-            <li>High-energy snacks (e.g., nuts, energy bars)</li>
-            <li>First aid kit</li>
-            <li>Map and compass or GPS device</li>
-            <li>Multi-tool or knife</li>
-            <li>Sun protection (sunscreen, sunglasses, hat)</li>
-            <li>Emergency whistle</li>
-            <li>Headlamp or flashlight with extra batteries</li>
-        </ul>
+    <h1>
+        <img src="images/hiking logo.jpg" alt="Bishop Wilderness Explorers Logo" style="max-width: 150px; display: block; margin: 0 auto;">
+        Bishop Wilderness Explorers - Safety Tips
+    </h1>
 
-        <h2>Additional Resources</h2>
-        <p>For more detailed information, check out these resources:</p>
-        <ul>
-            <li><a href="https://www.nps.gov/subjects/safety/index.htm" target="_blank" style="color: #ffcc00;">National Park Service Safety Guidelines</a></li>
-            <li><a href="https://www.rei.com/learn/expert-advice/hiking.html" target="_blank" style="color: #ffcc00;">REI Hiking Tips and Tricks</a></li>
-        </ul>
-    </main>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="about.html">About Us</a>
+        <a href="trails.html">Trails</a>
+        <a href="events.html">Events</a>
+        <a href="membership.html">Membership</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+
+    <div class="container">
+        <section id="safety-tips">
+            <h2>Essential Safety Tips for Hiking</h2>
+            <p>Before heading out on your next adventure, keep these safety tips in mind:</p>
+            <ul>
+                <li><strong>Plan Ahead:</strong> Know your route and check the weather forecast.</li>
+                <li><strong>Stay Hydrated:</strong> Carry enough water and drink regularly.</li>
+                <li><strong>Wear Appropriate Gear:</strong> Use suitable footwear and clothing for the terrain and weather.</li>
+                <li><strong>Tell Someone:</strong> Inform a friend or family member about your hiking plans.</li>
+                <li><strong>Follow Trail Markers:</strong> Stay on marked trails to avoid getting lost.</li>
+                <li><strong>Pack a First Aid Kit:</strong> Be prepared for minor injuries and emergencies.</li>
+                <li><strong>Be Aware of Wildlife:</strong> Know how to react if you encounter wildlife.</li>
+            </ul>
+        </section>
+
+        <!-- Quick Safety Checklist Box -->
+        <div class="quick-checklist" aria-label="Quick Safety Checklist">
+            <p>Quick Safety Checklist:</p>
+            <ul>
+                <li>Map & Compass 📍</li>
+                <li>Water Bottle 💧</li>
+                <li>Weather-Appropriate Clothes 👕</li>
+                <li>First Aid Kit 🚑</li>
+                <li>Phone & Emergency Contacts 📱</li>
+            </ul>
+        </div>
+
+        <!-- Call to Action Section -->
+        <div class="call-to-action" role="region" aria-labelledby="cta-title">
+            <h2 id="cta-title">Stay Safe and Stay Connected!</h2>
+            <p>Join our community to receive monthly hiking safety tips, event updates, and exclusive resources.</p>
+            <a href="membership.html" aria-label="Join Bishop Wilderness Explorers Membership">Join Now</a>
+        </div>
+    </div>
+
     <footer>
         <div class="footer-left">
             <p class="mcoc-bold">Bishop Wilderness Explorers</p>
@@ -171,19 +220,20 @@
         </div>
         <div class="socials">
             <a href="https://twitter.com/" target="_blank">
-                <img src="images/xlogo.png" alt="Twitter Logo">
+                <img src="images/xlogo.png" alt="Twitter Logo" />
             </a>
             <a href="https://www.facebook.com/" target="_blank">
-                <img src="images/facebook.svg" alt="Facebook Logo">
+                <img src="images/facebook.svg" alt="Facebook Logo" />
             </a>
             <a href="https://www.linkedin.com/" target="_blank">
-                <img src="images/linkedin.svg" alt="LinkedIn Logo">
+                <img src="images/linkedin.svg" alt="LinkedIn Logo" />
             </a>
             <a href="https://telegram.org/" target="_blank">
-                <img src="images/telegram.jpg" alt="Telegram Logo">
+                <img src="images/telegram.jpg" alt="Telegram Logo" />
             </a>
         </div>
     </footer>
+
     <script type="module">
         document.getElementById('currentyear').textContent = new Date().getFullYear();
         document.getElementById('lastModified').textContent = 'Last modified: ' + document.lastModified;
